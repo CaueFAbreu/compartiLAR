@@ -1,0 +1,9 @@
+# Documento entregue ao professor (contém as credenciais do Jira)
+entrega/
+
+# Arquivos locais da equipe (cópia do protótipo e organização interna)
+/compartiLAR-v2.excalidraw
+/Tarefas do João.pdf
+
+node_modules/
+.env

@@ -1,0 +1,104 @@
+@startuml casos-de-uso
+left to right direction
+skinparam shadowing false
+skinparam dpi 150
+skinparam defaultFontName Arial
+skinparam defaultFontSize 13
+skinparam actorBorderColor #333333
+skinparam actorBackgroundColor #FFFFFF
+skinparam usecaseBorderColor #333333
+skinparam usecaseBackgroundColor #FFFFFF
+skinparam rectangleBorderColor #333333
+skinparam arrowColor #333333
+
+title compartiLAR - Diagrama de Casos de Uso
+
+actor "Visitante" as Visitante
+actor "<i>Usuário</i>" as Usuario
+actor "Estudante" as Estudante
+actor "Proprietário" as Proprietario
+actor "Moderador" as Moderador
+actor "Serviço de E-mail\n<<sistema>>" as Email
+actor "Serviço de Mapas\n<<sistema>>" as Mapas
+
+Visitante <|-- Usuario
+Usuario <|-- Estudante
+Usuario <|-- Proprietario
+Usuario <|-- Moderador
+
+rectangle "compartiLAR" {
+  usecase "<i>Cadastrar conta</i>" as CAD
+  usecase "Cadastrar conta de\nestudante (UC01)" as UC01
+  usecase "Cadastrar conta de\nproprietário (UC02)" as UC02
+  usecase "Autenticar usuário\n(UC03)" as UC03
+  usecase "Gerenciar perfil e perfil\nde convivência (UC04)" as UC04
+  usecase "Anunciar moradia\n(UC05)" as UC05
+  usecase "Gerenciar minhas\nmoradias (UC06)" as UC06
+  usecase "Buscar moradias\n(UC07)" as UC07
+  usecase "Visualizar moradias\nno mapa (UC08)" as UC08
+  usecase "Visualizar detalhes\nda moradia (UC09)" as UC09
+  usecase "Demonstrar interesse\n(UC10)" as UC10
+  usecase "Responder interesses e\nagendar visita (UC11)" as UC11
+  usecase "Consultar\ncompatibilidade (UC12)" as UC12
+  usecase "Procurar colegas para\ndividir moradia (UC13)" as UC13
+  usecase "Favoritar moradia\n(UC14)" as UC14
+  usecase "Avaliar moradia\n(UC15)" as UC15
+  usecase "Denunciar anúncio\n(UC16)" as UC16
+  usecase "Moderar denúncias e verificar\nproprietários (UC17)" as UC17
+}
+
+' Associações dos atores
+Visitante --> CAD
+Visitante --> UC07
+Visitante --> UC09
+Usuario --> UC03
+Usuario --> UC16
+Estudante --> UC04
+Estudante --> UC05
+Estudante --> UC06
+Estudante --> UC10
+Estudante --> UC11
+Estudante --> UC12
+Estudante --> UC13
+Estudante --> UC14
+Estudante --> UC15
+Proprietario --> UC05
+Proprietario --> UC06
+Proprietario --> UC11
+Moderador --> UC17
+
+UC01 --> Email
+UC02 --> Email
+UC03 --> Email
+UC10 --> Email
+UC11 --> Email
+UC13 --> Email
+UC17 --> Email
+UC05 --> Mapas
+UC08 --> Mapas
+
+' Generalização de casos de uso
+UC01 --|> CAD
+UC02 --|> CAD
+
+' Inclusões
+UC04 ..> UC03 : <<include>>
+UC05 ..> UC03 : <<include>>
+UC06 ..> UC03 : <<include>>
+UC10 ..> UC03 : <<include>>
+UC11 ..> UC03 : <<include>>
+UC12 ..> UC03 : <<include>>
+UC13 ..> UC03 : <<include>>
+UC14 ..> UC03 : <<include>>
+UC15 ..> UC03 : <<include>>
+UC16 ..> UC03 : <<include>>
+UC17 ..> UC03 : <<include>>
+
+' Extensões
+UC08 ..> UC07 : <<extend>>
+UC10 ..> UC09 : <<extend>>
+UC12 ..> UC09 : <<extend>>
+UC14 ..> UC09 : <<extend>>
+UC15 ..> UC09 : <<extend>>
+UC16 ..> UC09 : <<extend>>
+@enduml
