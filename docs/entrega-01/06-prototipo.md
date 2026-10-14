@@ -3,7 +3,7 @@
 O protótipo é um conjunto de wireframes (rascunhos de tela, sem cores definitivas nem funcionalidades) usado para validar as histórias de usuário com estudantes antes da implementação. A equipe seguiu o ciclo de prototipação do Anexo II do enunciado: construiu uma primeira versão, avaliou-a com usuários reais e refinou o protótipo e os requisitos a partir do que observou.
 
 - **Versão 2 (final):** 18 telas refinadas após a validação, com o conteúdo completo de cada tela.
-   - https://excalidraw.com/#json=9MYjm-tdShqSe7RBc0k5o,4sccP6slp_d8uq-yySeq_Q
+   - https://excalidraw.com/#json=uAtkR4T62bUtVMHdVQmf0,mZWw6MxE7ouLOVZr0HbhmA
 - **Versão 1 (rascunho):** 18 telas usadas na validação com os estudantes.
    - https://excalidraw.com/#json=cbhYKHrcFDrYxQ9V9vK-l,rt_s-KqllqKu8-kkyWjYUg
 - **Ferramenta:** Excalidraw, com traço de rascunho à mão, adequado à baixa fidelidade.
