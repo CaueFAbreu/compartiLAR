@@ -104,7 +104,8 @@ entity "MORADIA" as Moradia {
   * num_moradores : inteiro
   divisao_despesas : texto
   mobilia_inclusa : texto
-  * status : {AGUARDANDO, ATIVA, PAUSADA, OCULTA, REMOVIDA}
+  * status : {AGUARDANDO, ATIVA, PAUSADA, REMOVIDA}
+  * oculta_moderacao : booleano
   * criado_em : data e hora
 }
 
@@ -139,7 +140,7 @@ entity "VAGA" as Vaga {
   * id : identificador
   --
   * moradia_id : FK
-  * tipo_quarto : {INDIVIDUAL, COMPARTILHADO}
+  tipo_quarto : {INDIVIDUAL, COMPARTILHADO}
   * valor_aluguel : decimal
   * valor_contas : decimal
   valor_condominio : decimal

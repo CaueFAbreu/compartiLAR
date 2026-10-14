@@ -3,7 +3,7 @@
 O protótipo é um conjunto de wireframes (rascunhos de tela, sem cores definitivas nem funcionalidades) usado para validar as histórias de usuário com estudantes antes da implementação. A equipe seguiu o ciclo de prototipação do Anexo II do enunciado: construiu uma primeira versão, avaliou-a com usuários reais e refinou o protótipo e os requisitos a partir do que observou.
 
 - **Versão 2 (final):** 18 telas refinadas após a validação, com o conteúdo completo de cada tela.
-   - https://excalidraw.com/#json=uAtkR4T62bUtVMHdVQmf0,mZWw6MxE7ouLOVZr0HbhmA
+   - https://excalidraw.com/#json=RQO5drH4dqPhQ-sBKRnWz,on4KLNclJFfZZWXJsrGZdA
 - **Versão 1 (rascunho):** 18 telas usadas na validação com os estudantes.
    - https://excalidraw.com/#json=cbhYKHrcFDrYxQ9V9vK-l,rt_s-KqllqKu8-kkyWjYUg
 - **Ferramenta:** Excalidraw, com traço de rascunho à mão, adequado à baixa fidelidade.
@@ -26,10 +26,10 @@ O protótipo é um conjunto de wireframes (rascunhos de tela, sem cores definiti
 | T10 | Minhas moradias | US06 | Moradias com status, vagas e interessados; ações editar, pausar, vagas e moradores; convite de morador pelo e-mail da UFU, com o status de cada vínculo. |
 | T11 | Interessados e visitas | US11 | Interessados por vaga com curso, período, selo de verificado, compatibilidade e mensagem; "Aceitar" e "Recusar"; após o aceite, telefone liberado e proposta de data e horário de visita. |
 | T12 | Meus interesses | US10, US11 | Interesses com status; no aceito, endereço exato, contato do anunciante e visita proposta com "Confirmar visita" e "Sugerir outro horário". |
-| T13 | Meu perfil e convivência | US04 | Dados pessoais e "Sobre mim"; aviso de que as respostas não aparecem para ninguém; perguntas de sono, festas, organização, silêncio, visitas que dormem, local de estudo, fumo, pets, divisão de tarefas e tempo de permanência. |
+| T13 | Meu perfil e convivência | US04 | Dados pessoais e "Sobre mim"; aviso de que as respostas individuais não são exibidas, apenas o percentual e o resumo da compatibilidade; perguntas de sono, festas, organização, silêncio, visitas que dormem, local de estudo, fumo, pets, divisão de tarefas e tempo de permanência. |
 | T14 | Procuro colega | US13 | Formulário "Minha procura"; mural filtrável por compatibilidade mínima e campus; cards com curso, período, selo de verificado, compatibilidade e orçamento; abas de convites. |
 | T15 | Favoritos | US14 | Grade de favoritos com seleção para comparar e a etiqueta "Sem vagas"; tabela de comparação lado a lado (valor, distância, tipo, compatibilidade e comodidades). |
-| T16 | Avaliar moradia | US15 | Notas de 1 a 5 em quatro critérios e comentário; avaliações publicadas com a resposta do anunciante. |
+| T16 | Avaliar moradia | US15 | Notas de 1 a 5 em quatro critérios, com "não se aplica" na convivência para quem só visitou; comentário; avaliações publicadas com a resposta do anunciante. |
 | T17 | Formulário de denúncia | US16 | Motivos da denúncia, descrição e aviso sobre a ocultação com 3 denúncias. |
 | T18 | Painel de moderação | US17 | Fila de moradias denunciadas; detalhes, histórico do anunciante e justificativa; decisões procedente, improcedente e suspender; aba de proprietários aguardando verificação. |
 

@@ -103,7 +103,8 @@ entity "MORADIA" as Moradia {
   * num_moradores : inteiro
   divisao_despesas : texto
   mobilia_inclusa : texto
-  * status : {AGUARDANDO, ATIVA, PAUSADA, OCULTA, REMOVIDA}
+  * status : {AGUARDANDO, ATIVA, PAUSADA, REMOVIDA}
+  * oculta_moderacao : booleano
   * criado_em : data e hora
 }
 
@@ -138,7 +139,7 @@ entity "VAGA" as Vaga {
   * id : identificador
   --
   * moradia_id : FK
-  * tipo_quarto : {INDIVIDUAL, COMPARTILHADO}
+  tipo_quarto : {INDIVIDUAL, COMPARTILHADO}
   * valor_aluguel : decimal
   * valor_contas : decimal
   valor_condominio : decimal
@@ -170,7 +171,7 @@ entity "VISITA" as Visita {
   --
   * interesse_id : FK
   * data_hora : data e hora
-  * status : {PROPOSTA, CONFIRMADA, CANCELADA}
+  * status : {PROPOSTA, CONFIRMADA, CANCELADA, REALIZADA, NAO_REALIZADA}
 }
 
 entity "PROCURA_COLEGA" as Procura {
@@ -203,7 +204,7 @@ entity "AVALIACAO" as Avaliacao {
   * nota_custo_beneficio : inteiro (1 a 5)
   * nota_localizacao : inteiro (1 a 5)
   * nota_conservacao : inteiro (1 a 5)
-  * nota_convivencia : inteiro (1 a 5)
+  nota_convivencia : inteiro (1 a 5)
   comentario : texto
   resposta_anunciante : texto
   * criado_em : data e hora

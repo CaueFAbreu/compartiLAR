@@ -70,7 +70,7 @@ As histórias de usuário estão agrupadas em épicos e seguem o formato *"Como 
 - O estudante pode alterar nome, foto, curso, período, telefone e uma breve apresentação.
 - O perfil de convivência registra: horário de sono (cedo, tarde ou variável), nível de organização e limpeza (1 a 5), frequência de festas e visitas (nunca, às vezes ou frequente), se fuma, se tem pets, se aceita pets e a importância de silêncio para estudar (1 a 5).
 - O perfil também registra se aceita visitas que dormem na casa, onde costuma estudar (em casa, na biblioteca ou ambos), como prefere dividir as tarefas domésticas (escala, cada um cuida do seu ou diarista) e por quanto tempo pretende ficar (um semestre, um ano ou o curso todo). *(validação)*
-- A tela informa que as respostas não são exibidas a outros usuários, apenas o resultado da compatibilidade. *(validação)*
+- A tela informa que as respostas individuais não são exibidas a outros usuários: eles veem apenas o percentual de compatibilidade e o resumo de pontos em comum e de atenção (RN03). *(validação)*
 - O e-mail não pode ser alterado.
 - O perfil de convivência é opcional, mas sem ele a compatibilidade (US12) não é calculada.
 
@@ -85,7 +85,7 @@ As histórias de usuário estão agrupadas em épicos e seguem o formato *"Como 
 - O anunciante indica se oferece **vagas em moradia compartilhada** ou o **imóvel inteiro**; no imóvel inteiro, a moradia tem uma única vaga, que corresponde ao imóvel todo. *(validação)*
 - O sistema localiza o endereço no mapa e calcula a distância até cada campus de Uberlândia.
 - A moradia tem de 1 a 10 fotos, cada uma com a legenda do cômodo (quarto, banheiro, cozinha, área de serviço etc.). *(validação)*
-- A moradia tem ao menos uma vaga, com tipo de quarto (individual ou compartilhado), valor do aluguel, estimativa de contas (água, luz, internet), valor do condomínio quando houver e data de disponibilidade.
+- A moradia tem ao menos uma vaga, com tipo de quarto (individual ou compartilhado; não se aplica ao imóvel inteiro), valor do aluguel, estimativa de contas (água, luz, internet), valor do condomínio quando houver e data de disponibilidade.
 - O cadastro em etapas mostra o progresso (ex.: "Etapa 2 de 5"). *(validação)*
 
 ### US06: Gerenciar minhas moradias e vagas
@@ -147,6 +147,8 @@ As histórias de usuário estão agrupadas em épicos e seguem o formato *"Como 
 - O anunciante vê os interessados em cada vaga, com a apresentação, o curso, o período, o selo de estudante verificado e a compatibilidade de cada um. *(validação)*
 - Ao aceitar um interesse, o sistema libera ao estudante o endereço exato e o telefone do anunciante, e ao anunciante o telefone do estudante.
 - O anunciante pode propor uma data e um horário de visita, que o estudante confirma ou recusa.
+- Depois da data, o anunciante marca a visita como realizada ou não realizada; só a visita realizada dá direito a avaliar a moradia (US15).
+- Até a integração do cálculo de compatibilidade (US12, tarefa T39, Sprint 3), a compatibilidade dos interessados aparece como indisponível.
 - O estudante é notificado por e-mail de cada resposta.
 
 ## Épico 5: Convivência
@@ -177,6 +179,7 @@ As histórias de usuário estão agrupadas em épicos e seguem o formato *"Como 
 - O estudante pode adicionar e remover favoritos.
 - A lista de favoritos indica as moradias que não têm mais vagas disponíveis.
 - O estudante pode comparar até 3 favoritas lado a lado: valor, distância e tempo a pé, tipo de oferta, comodidades e compatibilidade (RN01 a RN03). *(validação)*
+- Até a integração do cálculo de compatibilidade (US12, tarefa T39, Sprint 3), a linha de compatibilidade da comparação aparece como indisponível.
 
 ## Épico 6: Confiança e moderação
 
@@ -184,8 +187,8 @@ As histórias de usuário estão agrupadas em épicos e seguem o formato *"Como 
 **Como** estudante que morou ou visitou uma moradia, **quero** avaliá-la, **para** ajudar outros estudantes a escolher bem.
 
 **Critérios de aceitação:**
-- Só pode avaliar quem fez uma visita à moradia (visita confirmada cuja data já passou) ou é ou foi morador confirmado dela.
-- A avaliação tem notas de 1 a 5 para custo-benefício, localização, conservação e convivência, além de um comentário.
+- Só pode avaliar quem tem uma visita à moradia marcada como realizada pelo anunciante ou é ou foi morador confirmado dela.
+- A avaliação tem notas de 1 a 5 para custo-benefício, localização, conservação e convivência, além de um comentário. Quem apenas visitou pode marcar a convivência como "não se aplica".
 - Cada estudante avalia uma mesma moradia apenas uma vez, mas pode editar a avaliação.
 - O anunciante pode publicar uma resposta a cada avaliação.
 
@@ -202,7 +205,7 @@ As histórias de usuário estão agrupadas em épicos e seguem o formato *"Como 
 
 **Critérios de aceitação:**
 - O moderador vê duas filas: denúncias pendentes (ordenadas pela quantidade de denúncias) e proprietários aguardando verificação.
-- Na denúncia, o moderador pode julgá-la procedente (a moradia é removida) ou improcedente (a moradia volta a ficar visível), e pode suspender o anunciante.
+- Na denúncia, o moderador pode julgá-la procedente (a moradia é removida) ou improcedente (a ocultação por denúncia é retirada, e a moradia volta à busca se atender às condições de publicação), e pode suspender o anunciante.
 - No cadastro de proprietário, o moderador pode aprovar ou recusar, informando o motivo.
 - O usuário afetado é notificado por e-mail de cada decisão.
 
@@ -213,7 +216,7 @@ As regras abaixo definem os valores calculados que aparecem nas histórias e no 
 **RN01 – Valor exibido de uma moradia**
 
 - O valor total mensal de uma vaga é a soma do aluguel, da estimativa de contas e do condomínio.
-- Nos resultados da busca, no mapa e nos favoritos, a moradia exibe o menor valor total entre as suas vagas disponíveis. Quando as vagas disponíveis têm valores diferentes, o valor aparece com o prefixo "a partir de".
+- Nos resultados da busca e no mapa, a moradia exibe o menor valor total entre as vagas disponíveis que atendem aos filtros ativos (faixa de valor e tipo de quarto). Nos favoritos, que não têm filtros, considera todas as vagas disponíveis. Quando mais de uma vaga é considerada e os valores são diferentes, o valor aparece com o prefixo "a partir de".
 - O filtro de faixa de valor inclui a moradia quando ao menos uma vaga disponível está dentro da faixa.
 
 **RN02 – Distância e tempo a pé até o campus**

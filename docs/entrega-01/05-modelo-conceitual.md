@@ -29,17 +29,17 @@ Fonte do diagrama: [modelo-conceitual.puml](../diagramas/modelo-conceitual.puml)
 | **CODIGO_VERIFICACAO** | Código temporário enviado por e-mail para confirmar a conta ou redefinir a senha. |
 | **CAMPUS** | Campus da UFU com suas coordenadas (Santa Mônica, Umuarama, Educação Física e Glória). |
 | **CURSO** | Curso de graduação ou pós-graduação, vinculado ao campus onde é oferecido. |
-| **MORADIA** | Imóvel anunciado (república, apartamento, casa, kitnet ou quarto), com a modalidade (vagas em moradia compartilhada ou imóvel inteiro), endereço, coordenadas, público, regras, número de moradores, divisão das despesas, mobília incluída e status. |
+| **MORADIA** | Imóvel anunciado (república, apartamento, casa, kitnet ou quarto), com a modalidade (vagas em moradia compartilhada ou imóvel inteiro), endereço, coordenadas, público, regras, número de moradores, divisão das despesas, mobília incluída, status definido pelo anunciante e indicação separada de ocultação pela moderação. |
 | **DISTANCIA_CAMPUS** | Distância calculada entre uma moradia e cada campus, usada nos filtros e na ordenação. |
 | **COMODIDADE** e **MORADIA_COMODIDADE** | Catálogo de comodidades (internet, garagem, lavanderia, mobiliada etc.) e sua associação com as moradias. |
 | **FOTO_MORADIA** | Foto de uma moradia, com a legenda do cômodo. Cada moradia tem de 1 a 10 fotos. |
-| **VAGA** | Vaga oferecida em uma moradia, com tipo de quarto, aluguel, estimativa de contas, condomínio e data de disponibilidade. |
+| **VAGA** | Vaga oferecida em uma moradia, com tipo de quarto (vazio no imóvel inteiro), aluguel, estimativa de contas, condomínio e data de disponibilidade. |
 | **MORADOR** | Vínculo, confirmado pelo estudante, entre um estudante e a moradia onde ele mora. Base do cálculo de compatibilidade. |
 | **INTERESSE** | Manifestação de interesse de um estudante em uma vaga, com a mensagem e a resposta do anunciante. |
-| **VISITA** | Visita agendada a partir de um interesse aceito. |
+| **VISITA** | Visita agendada a partir de um interesse aceito. Depois da data, o anunciante a marca como realizada ou não realizada. |
 | **PROCURA_COLEGA** | Publicação de um estudante que procura colegas para dividir um aluguel. |
 | **CONVITE_COLEGA** | Convite enviado por um estudante a outro a partir de uma procura. |
-| **AVALIACAO** | Avaliação de uma moradia por quem visitou a moradia ou morou nela, com notas por critério e a resposta do anunciante. |
+| **AVALIACAO** | Avaliação de uma moradia por quem visitou a moradia ou morou nela, com notas por critério (a de convivência fica vazia, "não se aplica", para quem só visitou) e a resposta do anunciante. |
 | **FAVORITO** | Moradias salvas por um estudante. |
 | **DENUNCIA** | Denúncia de uma moradia, com o motivo, a decisão do moderador e a justificativa. |
 
@@ -74,11 +74,11 @@ Fonte do diagrama: [modelo-conceitual.puml](../diagramas/modelo-conceitual.puml)
 1. `USUARIO.email` é único. Para o papel ESTUDANTE, o e-mail pertence ao domínio `ufu.br`.
 2. `PROPRIETARIO.cpf` e `COMODIDADE.nome` são únicos.
 3. Uma MORADIA de proprietário só pode ter status ATIVA quando `PROPRIETARIO.verificacao` for APROVADO.
-4. Uma MORADIA aparece na busca apenas com status ATIVA e ao menos uma VAGA com status DISPONIVEL.
+4. Uma MORADIA aparece na busca apenas quando tem status ATIVA, não está oculta pela moderação (`oculta_moderacao` falso), o anunciante está ativo (e aprovado, no caso de proprietário) e há ao menos uma VAGA com status DISPONIVEL. Retirar a ocultação por moderação não altera o status definido pelo anunciante.
 5. Em `INTERESSE`, um estudante tem no máximo um interesse PENDENTE ou ACEITO por vaga, e não pode ser anunciante nem morador da moradia.
 6. O endereço exato da MORADIA e o telefone do anunciante só são exibidos ao estudante com INTERESSE ACEITO naquela moradia.
-7. Em `AVALIACAO`, o par (`estudante_id`, `moradia_id`) é único, e o estudante precisa ter uma VISITA com status CONFIRMADA e data já passada, ou um vínculo de MORADOR com status CONFIRMADO ou SAIU, na moradia.
+7. Em `AVALIACAO`, o par (`estudante_id`, `moradia_id`) é único, e o estudante precisa ter uma VISITA com status REALIZADA, ou um vínculo de MORADOR com status CONFIRMADO ou SAIU, na moradia.
 8. Em `DENUNCIA`, o par (`denunciante_id`, `moradia_id`) é único.
 9. Um ESTUDANTE tem no máximo uma `PROCURA_COLEGA` com `ativa = verdadeiro`.
 10. A nota média, o valor exibido (RN01), o tempo a pé (RN02) e a compatibilidade de convivência (RN03) são **atributos derivados**: são calculados a partir de AVALIACAO, VAGA, DISTANCIA_CAMPUS, MORADOR e PERFIL_CONVIVENCIA, e não são armazenados.
-11. Uma MORADIA com modalidade IMOVEL_INTEIRO tem exatamente uma VAGA.
+11. Uma MORADIA com modalidade IMOVEL_INTEIRO tem exatamente uma VAGA, e o `tipo_quarto` dessa vaga fica vazio.

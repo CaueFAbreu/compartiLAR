@@ -29,7 +29,7 @@ entity "VISITA" as Visita {
   --
   * interesse_id : FK
   * data_hora : data e hora
-  * status : {PROPOSTA, CONFIRMADA, CANCELADA}
+  * status : {PROPOSTA, CONFIRMADA, CANCELADA, REALIZADA, NAO_REALIZADA}
 }
 
 entity "PROCURA_COLEGA" as Procura {
@@ -62,7 +62,7 @@ entity "AVALIACAO" as Avaliacao {
   * nota_custo_beneficio : inteiro (1 a 5)
   * nota_localizacao : inteiro (1 a 5)
   * nota_conservacao : inteiro (1 a 5)
-  * nota_convivencia : inteiro (1 a 5)
+  nota_convivencia : inteiro (1 a 5)
   comentario : texto
   resposta_anunciante : texto
   * criado_em : data e hora
@@ -94,7 +94,7 @@ entity "USUARIO" as Usuario #EEEEEE {
 }
 
 entity "ESTUDANTE" as Estudante #EEEEEE {
-  * id : identificador
+  * usuario_id : FK
 }
 
 entity "MORADIA" as Moradia #EEEEEE {

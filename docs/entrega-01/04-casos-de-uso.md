@@ -110,6 +110,7 @@ Fonte do diagrama: [casos-de-uso.svg](../diagramas/casos-de-uso.svg), gerado a p
 4. O sistema inicia a sessão com as permissões do papel do usuário.
 
 **Extensões:**
+- 1a. Já existe uma sessão válida de uma conta ativa: o sistema mantém a sessão, e o caso de uso termina sem solicitar as credenciais novamente.
 - 2a. As credenciais estão incorretas: o sistema informa que e-mail ou senha são inválidos, sem indicar qual. Após 5 tentativas em 15 minutos, o sistema bloqueia novas tentativas por 15 minutos.
 - 2b. O usuário esqueceu a senha: o usuário informa o e-mail; o sistema envia um código de redefinição; o usuário informa o código e a nova senha; o sistema altera a senha e retorna ao passo 1.
 - 3a. A conta está pendente de confirmação: o sistema informa e oferece o reenvio do código.
@@ -160,7 +161,7 @@ Fonte do diagrama: [casos-de-uso.svg](../diagramas/casos-de-uso.svg), gerado a p
 4. O sistema obtém as coordenadas do endereço junto ao Serviço de Mapas.
 5. O sistema calcula a distância da moradia até cada campus.
 6. O anunciante anexa as fotos e indica o cômodo de cada uma.
-7. O anunciante informa as vagas: tipo de quarto, valor do aluguel, estimativa de contas, condomínio e data de disponibilidade.
+7. O anunciante informa as vagas: tipo de quarto (exceto no imóvel inteiro), valor do aluguel, estimativa de contas, condomínio e data de disponibilidade.
 8. O sistema valida os dados e registra a moradia como ativa.
 9. O sistema apresenta a moradia publicada.
 
@@ -322,6 +323,7 @@ Fonte do diagrama: [casos-de-uso.svg](../diagramas/casos-de-uso.svg), gerado a p
 - 6a. O anunciante prefere combinar a visita diretamente: o caso de uso é encerrado após o passo 5.
 - 8a. O estudante recusa o horário e sugere outro: o sistema notifica o anunciante, que confirma ou propõe um novo horário.
 - 8b. O estudante desiste da vaga: o sistema registra o interesse como cancelado e notifica o anunciante.
+- *a. Depois da data da visita, o anunciante marca a visita como realizada ou não realizada: o sistema registra o resultado, que define se o estudante pode avaliar a moradia (UC15).
 
 **Pós-condição:** o interesse está aceito ou recusado e, quando combinada, a visita está registrada.
 **Casos de uso relacionados:** UC03, UC06, UC10, UC12, UC15.
@@ -408,7 +410,7 @@ Fonte do diagrama: [casos-de-uso.svg](../diagramas/casos-de-uso.svg), gerado a p
 
 **Fluxo normal:**
 1. Incluir <ins>Autenticar usuário (UC03)</ins>.
-2. O sistema verifica que o estudante fez uma visita à moradia (visita confirmada cuja data já passou) ou é ou foi morador confirmado dela.
+2. O sistema verifica que o estudante tem uma visita à moradia marcada como realizada ou é ou foi morador confirmado dela.
 3. O estudante atribui notas de 1 a 5 para custo-benefício, localização, conservação e convivência.
 4. O estudante escreve um comentário.
 5. O sistema registra a avaliação e recalcula a nota média da moradia.
@@ -417,6 +419,7 @@ Fonte do diagrama: [casos-de-uso.svg](../diagramas/casos-de-uso.svg), gerado a p
 **Extensões:**
 - 2a. O estudante não teve vínculo com a moradia: o sistema informa que apenas quem visitou ou morou pode avaliar, e o caso de uso é encerrado.
 - 2b. O estudante já avaliou a moradia: o sistema apresenta a avaliação anterior para edição.
+- 3a. O estudante apenas visitou a moradia: o estudante pode marcar a convivência como "não se aplica", e o sistema calcula a média dessa avaliação sem esse critério.
 - 4a. O comentário tem mais de 1.000 caracteres: o sistema solicita um texto menor.
 - *a. O anunciante responde à avaliação: o sistema publica a resposta junto à avaliação.
 
@@ -468,7 +471,7 @@ Fonte do diagrama: [casos-de-uso.svg](../diagramas/casos-de-uso.svg), gerado a p
 - 2a. O moderador solicita a fila de proprietários aguardando verificação: o sistema apresenta os cadastros; o moderador aprova ou recusa cada um, informando o motivo; o sistema torna visíveis as moradias dos aprovados e notifica o proprietário por e-mail.
 - 3a. Não há denúncias pendentes: o sistema informa que a fila está vazia.
 - 6a. A decisão é "procedente": o sistema remove a moradia e encerra os interesses pendentes.
-- 6b. A decisão é "improcedente": o sistema torna a moradia visível novamente.
+- 6b. A decisão é "improcedente": o sistema retira a ocultação por denúncia. A moradia volta à busca somente se não estiver pausada nem removida pelo anunciante, se o anunciante estiver ativo (e aprovado, no caso de proprietário) e se houver ao menos uma vaga disponível.
 - 6c. O moderador decide suspender o anunciante: o moderador informa o prazo; o sistema suspende a conta e oculta todas as moradias do anunciante.
 
 **Pós-condição:** as denúncias estão resolvidas ou os cadastros de proprietários estão verificados, e os afetados foram notificados.

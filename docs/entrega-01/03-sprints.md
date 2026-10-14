@@ -33,6 +33,8 @@ A equipe adota o **Scrum**, adaptado para uma equipe de duas pessoas:
 
 > As datas podem ser ajustadas conforme a data definida para a Entrega 02.
 
+> O cálculo da compatibilidade (US12) é feito na Sprint 3. Até lá, as telas das Sprints 1 e 2 que a exibem (resultados da busca, página da moradia, interessados e comparação de favoritos) mostram o campo como indisponível; a integração nessas telas faz parte da tarefa T39.
+
 ---
 
 ## 3.4 Sprint 1: Fundação, anúncios e busca
@@ -98,7 +100,7 @@ A equipe adota o **Scrum**, adaptado para uma equipe de duas pessoas:
 | T24 | Implementar o cadastro de proprietário com status "aguardando verificação" | US02 | C |
 | T25 | Criar a opção de cadastro como proprietário na tela de cadastro | US02 | J |
 | T38 | Implementar o algoritmo de compatibilidade de convivência, com testes unitários | US12 | C |
-| T39 | Exibir a compatibilidade, os pontos em comum e os pontos de atenção na página da moradia | US12 | J |
+| T39 | Exibir a compatibilidade na página da moradia (com pontos em comum e de atenção), nos resultados da busca, nos interessados e na comparação de favoritos | US12 | J |
 | T40 | Implementar os endpoints de procura de colegas e de convites | US13 | C |
 | T41 | Criar o mural "Procuro colega" e o formulário de convite | US13 | J |
 | T44 | Implementar avaliações com a regra de elegibilidade e a resposta do anunciante | US15 | C |
