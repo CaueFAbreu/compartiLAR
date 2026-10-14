@@ -15,6 +15,7 @@ Fonte do diagrama: [modelo-conceitual.puml](../diagramas/modelo-conceitual.puml)
 
 ## 5.2 Dicionário de entidades
 
+<!-- quadro: Dicionário de entidades -->
 | Entidade | Descrição |
 |---|---|
 | **USUARIO** | Pessoa cadastrada. O atributo `papel` indica se é Estudante, Proprietário ou Moderador; o atributo `status` controla confirmação e suspensão. |
@@ -40,6 +41,7 @@ Fonte do diagrama: [modelo-conceitual.puml](../diagramas/modelo-conceitual.puml)
 
 ## 5.3 Relacionamentos
 
+<!-- quadro: Relacionamentos do modelo conceitual -->
 | Relacionamento | Cardinalidade | Descrição |
 |---|---|---|
 | USUARIO – ESTUDANTE / PROPRIETARIO | 1 : 0..1 | Especialização: cada usuário é, no máximo, um estudante ou um proprietário. |

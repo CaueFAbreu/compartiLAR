@@ -1,6 +1,6 @@
 # 6. Protótipo de Baixa Fidelidade
 
-O protótipo é um conjunto de wireframes (rascunhos de tela, sem cores definitivas nem funcionalidades) usado para validar as histórias de usuário com estudantes antes da implementação. A equipe seguiu o ciclo de prototipação: construiu uma primeira versão, avaliou-a com usuários reais e refinou o protótipo e os requisitos a partir do que observou.
+O protótipo é um conjunto de wireframes (rascunhos de tela, sem cores definitivas nem funcionalidades) usado para validar as histórias de usuário com estudantes antes da implementação. A equipe seguiu o ciclo de prototipação do Anexo II do enunciado: construiu uma primeira versão, avaliou-a com usuários reais e refinou o protótipo e os requisitos a partir do que observou.
 
 - **Versão 2 (final):** 18 telas refinadas após a validação, com o conteúdo completo de cada tela.
    - https://excalidraw.com/#json=RzYsVfe1HAERL_tuBwV7U,wPNdSUItD6wjMIeuL_TEMw
@@ -11,6 +11,7 @@ O protótipo é um conjunto de wireframes (rascunhos de tela, sem cores definiti
 
 ## 6.1 Telas
 
+<!-- quadro: Telas do protótipo -->
 | Tela | Nome | Histórias atendidas | Elementos principais |
 |---|---|---|---|
 | T01 | Página inicial | US07 | Busca rápida (campus, valor máximo e tipo de oferta); atalhos "Ver no mapa" e "Procuro colega"; cards de vagas recentes com o tipo de oferta, o tempo a pé e o valor. |
@@ -52,6 +53,7 @@ A versão 1 foi desenhada a partir da especificação das telas e apresentada a 
 
 ![Versão 1 – T01 Página inicial, usada na validação](../prototipo/v1/T01.png)
 
+<!-- quadro: Resultados da validação com usuários | fonte: Pesquisa de usabilidade realizada pelos autores (2026). -->
 | Participante | Curso, período e situação | Principais observações | Sugestão |
 |---|---|---|---|
 | Fernando F. | Computação, formado, mora em república | Achou fácil de usar; não ficou claro se a mensagem de interesse ia direto ao anunciante; sentiu falta do valor médio das contas e do número de moradores. | Chat de texto no app. |
@@ -72,6 +74,7 @@ O registro completo das respostas está no repositório do projeto, em [docs/val
 
 ## 6.4 Refinamento: ajustes feitos a partir da validação
 
+<!-- quadro: Ajustes decorrentes da validação -->
 | Observação da validação | Ajuste nos requisitos | Telas da v2 |
 |---|---|---|
 | Não ficou claro para onde vai a mensagem de interesse | US10: o sistema explica o envio antes de confirmar | T08 |

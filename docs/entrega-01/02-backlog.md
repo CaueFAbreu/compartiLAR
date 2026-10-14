@@ -9,6 +9,7 @@ As histórias de usuário estão agrupadas em épicos e seguem o formato *"Como 
 
 ## Resumo
 
+<!-- quadro: Resumo do backlog do produto -->
 | ID | História | Épico | Prior. | Pontos | Sprint |
 |---|---|---|---|---|---|
 | US01 | Cadastrar conta de estudante | Contas e perfis | M | 5 | 1 |
@@ -210,6 +211,7 @@ As histórias de usuário estão agrupadas em épicos e seguem o formato *"Como 
 
 Sugestões da validação que ficam registradas, mas fora das três sprints do MVP:
 
+<!-- quadro: Histórias do backlog futuro -->
 | ID | História | Origem | Prior. |
 |---|---|---|---|
 | US18 | **Como** estudante, **quero** conversar com o anunciante por mensagens dentro do app, **para** combinar a visita sem trocar telefone logo no primeiro contato. | Participantes Fernando F. e Pedro B. | C |

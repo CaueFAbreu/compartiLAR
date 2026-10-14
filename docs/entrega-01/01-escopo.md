@@ -23,6 +23,7 @@ A cada semestre, milhares de estudantes chegam a Uberlândia vindos de outras ci
 
 ## 1.3 Solução proposta
 
+<!-- quadro: Funcionalidades principais da solução -->
 | Frente | Funcionalidades principais |
 |---|---|
 | Anúncios | Cadastro de moradias com tipo, endereço, fotos, regras, comodidades e vagas (valor do aluguel, estimativa de contas, tipo de quarto e data de disponibilidade). |
@@ -35,6 +36,7 @@ Pagamentos, contratos e reservas **não** passam pela plataforma: o compartiLAR 
 
 ## 1.4 Stakeholders
 
+<!-- quadro: Stakeholders do compartiLAR -->
 | Stakeholder | Descrição | Interesse no sistema |
 |---|---|---|
 | **Estudantes que procuram moradia** (usuários principais) | Alunos da UFU, em especial calouros vindos de outras cidades. | Encontrar uma vaga segura, perto do campus, dentro do orçamento e com pessoas compatíveis. |

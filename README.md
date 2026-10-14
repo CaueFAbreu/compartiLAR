@@ -24,12 +24,12 @@ Projeto desenvolvido para a disciplina de Engenharia de Software (FACOM/UFU), co
 
 | # | Artefato | Arquivo |
 |---|---|---|
-| 1 | Definição do escopo | [docs/entrega-01/01-escopo.md](docs/entrega-01/01-escopo.md) |
-| 2 | Backlog do produto (histórias de usuário) | [docs/entrega-01/02-backlog.md](docs/entrega-01/02-backlog.md) |
-| 3 | Planejamento das sprints | [docs/entrega-01/03-sprints.md](docs/entrega-01/03-sprints.md) |
-| 4 | Casos de uso e diagrama de casos de uso | [docs/entrega-01/04-casos-de-uso.md](docs/entrega-01/04-casos-de-uso.md) |
-| 5 | Modelo conceitual (diagrama ER) | [docs/entrega-01/05-modelo-conceitual.md](docs/entrega-01/05-modelo-conceitual.md) |
-| 6 | Protótipo de baixa fidelidade | [docs/entrega-01/06-prototipo.md](docs/entrega-01/06-prototipo.md) |
+| 1 | Definição do escopo | [01-escopo.md](docs/entrega-01/01-escopo.md) |
+| 2 | Backlog do produto (histórias de usuário) | [02-backlog.md](docs/entrega-01/02-backlog.md) |
+| 3 | Planejamento das sprints | [03-sprints.md](docs/entrega-01/03-sprints.md) |
+| 4 | Casos de uso e diagrama de casos de uso | [04-casos-de-uso.md](docs/entrega-01/04-casos-de-uso.md) |
+| 5 | Modelo conceitual (diagrama ER) | [05-modelo-conceitual.md](docs/entrega-01/05-modelo-conceitual.md) |
+| 6 | Protótipo de baixa fidelidade e validação com usuários | [06-prototipo.md](docs/entrega-01/06-prototipo.md) |
 
 Os diagramas são versionados como código em [docs/diagramas/](docs/diagramas/) (PlantUML).
 

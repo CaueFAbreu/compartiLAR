@@ -4,6 +4,7 @@
 
 A equipe adota o **Scrum**, adaptado para uma equipe de duas pessoas:
 
+<!-- quadro: Adaptação do Scrum à equipe -->
 | Elemento | Como será aplicado |
 |---|---|
 | Papéis | Cauê acumula os papéis de Product Owner e Scrum Master; os dois integrantes atuam como desenvolvedores. |
@@ -15,6 +16,7 @@ A equipe adota o **Scrum**, adaptado para uma equipe de duas pessoas:
 
 ## 3.2 Divisão de responsabilidades
 
+<!-- quadro: Divisão de responsabilidades -->
 | Integrante | Foco |
 |---|---|
 | **Cauê** (C) | Arquitetura, backend (API, regras de negócio, autenticação, upload de fotos, geolocalização, busca, compatibilidade, moderação), testes automatizados, CI/CD e deploy. |
@@ -22,6 +24,7 @@ A equipe adota o **Scrum**, adaptado para uma equipe de duas pessoas:
 
 ## 3.3 Calendário
 
+<!-- quadro: Calendário e metas das sprints -->
 | Sprint | Período | Meta da sprint | Pontos |
 |---|---|---|---|
 | Sprint 1 | 19/10/2026 a 08/11/2026 | O estudante consegue se cadastrar, anunciar uma moradia e encontrá-la na busca. | 24 |
@@ -36,6 +39,7 @@ A equipe adota o **Scrum**, adaptado para uma equipe de duas pessoas:
 
 **Backlog da sprint:** US01, US03, US05, US07, US09 (24 pontos), mais as tarefas de infraestrutura.
 
+<!-- quadro: Tarefas da Sprint 1 -->
 | ID | Tarefa | História | Resp. |
 |---|---|---|---|
 | T01 | Criar o repositório e a estrutura do projeto (frontend e backend), com ESLint e Prettier | Infra | C |
@@ -66,6 +70,7 @@ A equipe adota o **Scrum**, adaptado para uma equipe de duas pessoas:
 
 **Backlog da sprint:** US02, US04, US06, US08, US10, US11 (22 pontos).
 
+<!-- quadro: Tarefas da Sprint 2 -->
 | ID | Tarefa | História | Resp. |
 |---|---|---|---|
 | T24 | Implementar o cadastro de proprietário com status "aguardando verificação" | US02 | C |
@@ -87,6 +92,7 @@ A equipe adota o **Scrum**, adaptado para uma equipe de duas pessoas:
 
 **Backlog da sprint:** US12, US13, US14, US15, US16, US17 (23 pontos).
 
+<!-- quadro: Tarefas da Sprint 3 -->
 | ID | Tarefa | História | Resp. |
 |---|---|---|---|
 | T38 | Implementar o algoritmo de compatibilidade de convivência, com testes unitários | US12 | C |
@@ -116,14 +122,20 @@ O planejamento acima está cadastrado no Jira (projeto **compartiLAR**, chave **
 
 ### Prints de tela
 
+<!-- fonte: Captura de tela do Jira Software feita pelos autores (2026). -->
 ![Sprint 1 no backlog do Jira, com as histórias, os épicos, os pontos, as tarefas de infraestrutura e os responsáveis](../gestao/prints/02-sprint1.png)
 
+<!-- fonte: Captura de tela do Jira Software feita pelos autores (2026). -->
 ![Sprint 2 no backlog do Jira, com 22 pontos estimados](../gestao/prints/02-sprint2.png)
 
+<!-- fonte: Captura de tela do Jira Software feita pelos autores (2026). -->
 ![Sprint 3 no backlog do Jira, com 23 pontos estimados](../gestao/prints/02-sprint3.png)
 
+<!-- fonte: Captura de tela do Jira Software feita pelos autores (2026). -->
 ![História US05 expandida, com suas subtarefas e os responsáveis de cada uma](../gestao/prints/03-historia-subtarefas.png)
 
+<!-- fonte: Captura de tela do Jira Software feita pelos autores (2026). -->
 ![Épicos do projeto](../gestao/prints/04-epicos.png)
 
+<!-- fonte: Captura de tela do Jira Software feita pelos autores (2026). -->
 ![Cronograma (timeline) com os épicos distribuídos pelas três sprints](../gestao/prints/05-cronograma.png)

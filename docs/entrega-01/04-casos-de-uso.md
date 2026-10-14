@@ -1,6 +1,6 @@
 # 4. Casos de Uso
 
-Cada caso de uso detalha uma história de usuário do backlog (UC01 corresponde a US01, UC02 a US02, e assim por diante). As descrições seguem o modelo do Anexo I:
+Cada caso de uso detalha uma história de usuário do backlog (UC01 corresponde a US01, UC02 a US02, e assim por diante). As descrições seguem o modelo do Anexo I do enunciado:
 
 - O **fluxo normal** descreve o cenário em que tudo dá certo.
 - As **extensões** descrevem alternativas e situações de erro. A numeração indica o passo do fluxo normal a que se referem (ex.: `2a` estende o passo 2). O prefixo `*` indica uma extensão que pode ocorrer em qualquer passo.
@@ -8,6 +8,7 @@ Cada caso de uso detalha uma história de usuário do backlog (UC01 corresponde 
 
 ## 4.1 Atores
 
+<!-- quadro: Atores do sistema -->
 | Ator | Tipo | Descrição |
 |---|---|---|
 | **Visitante** | Principal | Pessoa não autenticada. Pode criar uma conta, buscar moradias e ver seus detalhes. |
@@ -26,6 +27,7 @@ Fonte do diagrama: [casos-de-uso.puml](../diagramas/casos-de-uso.puml).
 
 **Relacionamentos representados:**
 
+<!-- quadro: Relacionamentos do diagrama de casos de uso -->
 | Tipo | Relacionamento |
 |---|---|
 | Generalização de atores | Usuário → Visitante; Estudante, Proprietário e Moderador → Usuário |
