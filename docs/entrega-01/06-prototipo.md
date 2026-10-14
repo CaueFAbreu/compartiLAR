@@ -3,7 +3,7 @@
 O protótipo é um conjunto de wireframes (rascunhos de tela, sem cores definitivas nem funcionalidades) usado para validar as histórias de usuário com estudantes antes da implementação. A equipe seguiu o ciclo de prototipação do Anexo II do enunciado: construiu uma primeira versão, avaliou-a com usuários reais e refinou o protótipo e os requisitos a partir do que observou.
 
 - **Versão 2 (final):** 18 telas refinadas após a validação, com o conteúdo completo de cada tela.
-   - https://excalidraw.com/#json=RzYsVfe1HAERL_tuBwV7U,wPNdSUItD6wjMIeuL_TEMw
+   - https://excalidraw.com/#json=9MYjm-tdShqSe7RBc0k5o,4sccP6slp_d8uq-yySeq_Q
 - **Versão 1 (rascunho):** 18 telas usadas na validação com os estudantes.
    - https://excalidraw.com/#json=cbhYKHrcFDrYxQ9V9vK-l,rt_s-KqllqKu8-kkyWjYUg
 - **Ferramenta:** Excalidraw, com traço de rascunho à mão, adequado à baixa fidelidade.
@@ -43,7 +43,7 @@ O protótipo é um conjunto de wireframes (rascunhos de tela, sem cores definiti
 
 ## 6.3 Versão 1 e validação com usuários
 
-A versão 1 foi desenhada a partir da especificação das telas e apresentada a 5 estudantes da UFU de cursos diferentes, entre moradores de república e pessoas procurando moradia ou alguém para dividir. Cada participante percorreu os fluxos 1, 3 e 4 e respondeu a cinco perguntas:
+A versão 1 foi desenhada a partir da especificação das telas e apresentada a 5 participantes da comunidade da UFU (4 estudantes de cursos diferentes e 1 egresso de Computação), entre moradores de república e pessoas procurando moradia ou alguém para dividir. Cada participante percorreu os fluxos 1, 3 e 4 e respondeu a cinco perguntas:
 
 1. Você conseguiu concluir a tarefa sem ajuda? Onde teve dúvida?
 2. Que informação você sentiu falta na página da moradia?

@@ -1,0 +1,174 @@
+@startuml modelo-conceitual-parte1
+hide circle
+skinparam linetype ortho
+skinparam shadowing false
+skinparam dpi 150
+skinparam defaultFontName Arial
+skinparam defaultFontSize 13
+skinparam entityBorderColor #333333
+skinparam entityBackgroundColor #FFFFFF
+skinparam arrowColor #333333
+skinparam nodesep 40
+skinparam ranksep 50
+
+title compartiLAR - Modelo Conceitual (parte 1): usuários, cursos e moradias
+
+entity "USUARIO" as Usuario {
+  * id : identificador
+  --
+  * nome : texto
+  * email : texto <<único>>
+  * senha_hash : texto
+  * telefone : texto
+  foto_url : texto
+  * papel : {ESTUDANTE, PROPRIETARIO, MODERADOR}
+  * status : {PENDENTE, ATIVO, SUSPENSO}
+  suspenso_ate : data
+  * criado_em : data e hora
+}
+
+entity "ESTUDANTE" as Estudante {
+  * usuario_id : FK
+  --
+  * curso_id : FK
+  * periodo : inteiro
+  apresentacao : texto
+}
+
+entity "PROPRIETARIO" as Proprietario {
+  * usuario_id : FK
+  --
+  * cpf : texto <<único>>
+  * verificacao : {AGUARDANDO, APROVADO, RECUSADO}
+  verificado_por : FK
+  motivo_recusa : texto
+}
+
+entity "PERFIL_CONVIVENCIA" as Perfil {
+  * estudante_id : FK
+  --
+  * horario_sono : {CEDO, TARDE, VARIAVEL}
+  * organizacao : inteiro (1 a 5)
+  * festas_visitas : {NUNCA, AS_VEZES, FREQUENTE}
+  * fumante : booleano
+  * tem_pet : booleano
+  * aceita_pet : booleano
+  * silencio_estudo : inteiro (1 a 5)
+  * visitas_pernoite : booleano
+  * local_estudo : {CASA, BIBLIOTECA, AMBOS}
+  * divisao_tarefas : {ESCALA, CADA_UM, DIARISTA}
+  * permanencia : {SEMESTRE, ANO, CURSO}
+}
+
+entity "CODIGO_VERIFICACAO" as Codigo {
+  * id : identificador
+  --
+  * usuario_id : FK
+  * tipo : {CONFIRMACAO, REDEFINICAO_SENHA}
+  * codigo_hash : texto
+  * tentativas : inteiro
+  * expira_em : data e hora
+}
+
+entity "CAMPUS" as Campus {
+  * id : identificador
+  --
+  * nome : texto
+  * latitude : decimal
+  * longitude : decimal
+}
+
+entity "CURSO" as Curso {
+  * id : identificador
+  --
+  * nome : texto
+  * campus_id : FK
+}
+
+entity "MORADIA" as Moradia {
+  * id : identificador
+  --
+  * anunciante_id : FK
+  * tipo : {REPUBLICA, APARTAMENTO, CASA, KITNET, QUARTO}
+  * modalidade : {VAGAS, IMOVEL_INTEIRO}
+  * titulo : texto
+  * descricao : texto
+  * logradouro, numero, bairro, cep : texto
+  complemento : texto
+  * latitude : decimal
+  * longitude : decimal
+  * publico : {MASCULINO, FEMININO, MISTO}
+  * aceita_pet : booleano
+  * permite_fumar : booleano
+  * permite_visitas : booleano
+  * num_moradores : inteiro
+  divisao_despesas : texto
+  mobilia_inclusa : texto
+  * status : {AGUARDANDO, ATIVA, PAUSADA, OCULTA, REMOVIDA}
+  * criado_em : data e hora
+}
+
+entity "DISTANCIA_CAMPUS" as Distancia {
+  * moradia_id : FK
+  * campus_id : FK
+  --
+  * distancia_metros : inteiro
+}
+
+entity "COMODIDADE" as Comodidade {
+  * id : identificador
+  --
+  * nome : texto <<único>>
+}
+
+entity "MORADIA_COMODIDADE" as MoradiaComodidade {
+  * moradia_id : FK
+  * comodidade_id : FK
+}
+
+entity "FOTO_MORADIA" as Foto {
+  * id : identificador
+  --
+  * moradia_id : FK
+  * url : texto
+  * ordem : inteiro
+  comodo : texto
+}
+
+entity "VAGA" as Vaga {
+  * id : identificador
+  --
+  * moradia_id : FK
+  * tipo_quarto : {INDIVIDUAL, COMPARTILHADO}
+  * valor_aluguel : decimal
+  * valor_contas : decimal
+  valor_condominio : decimal
+  * disponivel_em : data
+  * status : {DISPONIVEL, OCUPADA}
+}
+
+entity "MORADOR" as Morador {
+  * moradia_id : FK
+  * estudante_id : FK
+  --
+  * status : {CONVIDADO, CONFIRMADO, SAIU}
+  * desde : data
+}
+
+Usuario ||--o| Estudante : "é um"
+Usuario ||--o| Proprietario : "é um"
+Usuario |o--o{ Proprietario : "verifica (moderador)"
+Usuario ||--o{ Codigo : recebe
+Estudante ||--o| Perfil : possui
+Curso ||--o{ Estudante : matricula
+Campus ||--o{ Curso : sedia
+Usuario ||--o{ Moradia : anuncia
+Moradia ||--|{ Foto : possui
+Moradia ||--|{ Vaga : oferece
+Moradia ||--o{ MoradiaComodidade : tem
+Comodidade ||--o{ MoradiaComodidade : "está em"
+Moradia ||--o{ Distancia : "fica a"
+Campus ||--o{ Distancia : "dista de"
+Moradia ||--o{ Morador : abriga
+Estudante ||--o{ Morador : "mora em"
+@enduml

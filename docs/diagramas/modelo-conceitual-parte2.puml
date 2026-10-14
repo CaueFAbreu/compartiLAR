@@ -1,0 +1,126 @@
+@startuml modelo-conceitual-parte2
+hide circle
+skinparam linetype ortho
+skinparam shadowing false
+skinparam dpi 150
+skinparam defaultFontName Arial
+skinparam defaultFontSize 13
+skinparam entityBorderColor #333333
+skinparam entityBackgroundColor #FFFFFF
+skinparam arrowColor #333333
+skinparam nodesep 40
+skinparam ranksep 50
+
+title compartiLAR - Modelo Conceitual (parte 2): interações entre estudantes e moradias
+
+entity "INTERESSE" as Interesse {
+  * id : identificador
+  --
+  * estudante_id : FK
+  * vaga_id : FK
+  * mensagem : texto
+  * status : {PENDENTE, ACEITO, RECUSADO, CANCELADO}
+  * criado_em : data e hora
+  respondido_em : data e hora
+}
+
+entity "VISITA" as Visita {
+  * id : identificador
+  --
+  * interesse_id : FK
+  * data_hora : data e hora
+  * status : {PROPOSTA, CONFIRMADA, CANCELADA}
+}
+
+entity "PROCURA_COLEGA" as Procura {
+  * id : identificador
+  --
+  * estudante_id : FK
+  * campus_id : FK
+  * orcamento_max : decimal
+  * tipo_desejado : {REPUBLICA, APARTAMENTO, CASA, KITNET, QUARTO}
+  * data_mudanca : data
+  descricao : texto
+  * ativa : booleano
+}
+
+entity "CONVITE_COLEGA" as Convite {
+  * id : identificador
+  --
+  * remetente_id : FK
+  * procura_id : FK
+  * mensagem : texto
+  * status : {PENDENTE, ACEITO, RECUSADO}
+  * criado_em : data e hora
+}
+
+entity "AVALIACAO" as Avaliacao {
+  * id : identificador
+  --
+  * estudante_id : FK
+  * moradia_id : FK
+  * nota_custo_beneficio : inteiro (1 a 5)
+  * nota_localizacao : inteiro (1 a 5)
+  * nota_conservacao : inteiro (1 a 5)
+  * nota_convivencia : inteiro (1 a 5)
+  comentario : texto
+  resposta_anunciante : texto
+  * criado_em : data e hora
+}
+
+entity "FAVORITO" as Favorito {
+  * estudante_id : FK
+  * moradia_id : FK
+  --
+  * criado_em : data e hora
+}
+
+entity "DENUNCIA" as Denuncia {
+  * id : identificador
+  --
+  * denunciante_id : FK
+  * moradia_id : FK
+  moderador_id : FK
+  * motivo : {GOLPE, ANUNCIO_FALSO, DISCRIMINACAO, INADEQUADO, OUTRO}
+  descricao : texto
+  * status : {PENDENTE, PROCEDENTE, IMPROCEDENTE}
+  justificativa : texto
+  * criado_em : data e hora
+  resolvida_em : data e hora
+}
+
+entity "USUARIO" as Usuario #EEEEEE {
+  * id : identificador
+}
+
+entity "ESTUDANTE" as Estudante #EEEEEE {
+  * id : identificador
+}
+
+entity "MORADIA" as Moradia #EEEEEE {
+  * id : identificador
+}
+
+entity "VAGA" as Vaga #EEEEEE {
+  * id : identificador
+}
+
+entity "CAMPUS" as Campus #EEEEEE {
+  * id : identificador
+}
+
+Estudante ||--o{ Interesse : demonstra
+Vaga ||--o{ Interesse : recebe
+Interesse ||--o{ Visita : agenda
+Estudante ||--o{ Procura : publica
+Campus ||--o{ Procura : referencia
+Procura ||--o{ Convite : recebe
+Estudante ||--o{ Convite : envia
+Estudante ||--o{ Favorito : favorita
+Moradia ||--o{ Favorito : "é favoritada"
+Estudante ||--o{ Avaliacao : faz
+Moradia ||--o{ Avaliacao : recebe
+Usuario ||--o{ Denuncia : registra
+Usuario |o--o{ Denuncia : "analisa (moderador)"
+Moradia ||--o{ Denuncia : "é alvo de"
+@enduml

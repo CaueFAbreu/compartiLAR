@@ -28,8 +28,8 @@ A equipe adota o **Scrum**, adaptado para uma equipe de duas pessoas:
 | Sprint | Período | Meta da sprint | Pontos |
 |---|---|---|---|
 | Sprint 1 | 19/10/2026 a 08/11/2026 | O estudante consegue se cadastrar, anunciar uma moradia e encontrá-la na busca. | 24 |
-| Sprint 2 | 09/11/2026 a 29/11/2026 | O estudante vê as moradias no mapa e negocia a vaga com o anunciante até a visita. | 22 |
-| Sprint 3 | 30/11/2026 a 20/12/2026 | A plataforma recomenda pela convivência, é avaliada pelos usuários e é moderada. | 23 |
+| Sprint 2 | 09/11/2026 a 29/11/2026 | O estudante vê as moradias no mapa, negocia a vaga com o anunciante até a visita e compara as favoritas. | 21 |
+| Sprint 3 | 30/11/2026 a 20/12/2026 | A plataforma recebe proprietários verificados, recomenda pela convivência, é avaliada pelos usuários e é moderada. | 24 |
 
 > As datas podem ser ajustadas conforme a data definida para a Entrega 02.
 
@@ -66,15 +66,13 @@ A equipe adota o **Scrum**, adaptado para uma equipe de duas pessoas:
 | T22 | Criar a página de detalhes da moradia | US09 | J |
 | T23 | Publicar a primeira versão online (frontend e backend) | Infra | C |
 
-## 3.5 Sprint 2: Mapa, proprietários e contato
+## 3.5 Sprint 2: Mapa, contato e favoritos
 
-**Backlog da sprint:** US02, US04, US06, US08, US10, US11 (22 pontos).
+**Backlog da sprint:** US04, US06, US08, US10, US11, US14 (21 pontos).
 
 <!-- quadro: Tarefas da Sprint 2 -->
 | ID | Tarefa | História | Resp. |
 |---|---|---|---|
-| T24 | Implementar o cadastro de proprietário com status "aguardando verificação" | US02 | C |
-| T25 | Criar a opção de cadastro como proprietário na tela de cadastro | US02 | J |
 | T26 | Implementar os endpoints de perfil e de perfil de convivência | US04 | J |
 | T27 | Criar a tela "Meu perfil" com o questionário de convivência | US04 | J |
 | T28 | Implementar edição, pausa e remoção de moradias, gestão de vagas e vínculo de moradores | US06 | C |
@@ -86,21 +84,23 @@ A equipe adota o **Scrum**, adaptado para uma equipe de duas pessoas:
 | T34 | Implementar aceite e recusa de interesses, liberação de contato e agendamento de visita | US11 | C |
 | T35 | Escrever os testes unitários do fluxo de interesse e visita | US11 | C |
 | T36 | Criar a tela de interessados por vaga e o agendamento de visita | US11 | J |
+| T42 | Implementar os endpoints de adicionar, remover e listar favoritos | US14 | J |
+| T43 | Criar o botão de favoritar, a tela "Favoritos" e a comparação lado a lado | US14 | J |
 | T37 | Aplicar teste de uso com 5 colegas e registrar o feedback no Jira | Validação | J |
 
-## 3.6 Sprint 3: Convivência, avaliações e moderação
+## 3.6 Sprint 3: Proprietários, convivência e moderação
 
-**Backlog da sprint:** US12, US13, US14, US15, US16, US17 (23 pontos).
+**Backlog da sprint:** US02, US12, US13, US15, US16, US17 (24 pontos).
 
 <!-- quadro: Tarefas da Sprint 3 -->
 | ID | Tarefa | História | Resp. |
 |---|---|---|---|
+| T24 | Implementar o cadastro de proprietário com status "aguardando verificação" | US02 | C |
+| T25 | Criar a opção de cadastro como proprietário na tela de cadastro | US02 | J |
 | T38 | Implementar o algoritmo de compatibilidade de convivência, com testes unitários | US12 | C |
 | T39 | Exibir a compatibilidade, os pontos em comum e os pontos de atenção na página da moradia | US12 | J |
 | T40 | Implementar os endpoints de procura de colegas e de convites | US13 | C |
 | T41 | Criar o mural "Procuro colega" e o formulário de convite | US13 | J |
-| T42 | Implementar os endpoints de adicionar, remover e listar favoritos | US14 | J |
-| T43 | Criar o botão de favoritar e a tela "Favoritos" | US14 | J |
 | T44 | Implementar avaliações com a regra de elegibilidade e a resposta do anunciante | US15 | C |
 | T45 | Criar o formulário de avaliação e a lista de avaliações | US15 | J |
 | T46 | Implementar o registro de denúncias e a ocultação automática com 3 denúncias | US16 | C |
@@ -126,10 +126,10 @@ O planejamento acima está cadastrado no Jira (projeto **compartiLAR**, chave **
 ![Sprint 1 no backlog do Jira, com as histórias, os épicos, os pontos, as tarefas de infraestrutura e os responsáveis](../gestao/prints/02-sprint1.png)
 
 <!-- fonte: Captura de tela do Jira Software feita pelos autores (2026). -->
-![Sprint 2 no backlog do Jira, com 22 pontos estimados](../gestao/prints/02-sprint2.png)
+![Sprint 2 no backlog do Jira, com 21 pontos estimados](../gestao/prints/02-sprint2.png)
 
 <!-- fonte: Captura de tela do Jira Software feita pelos autores (2026). -->
-![Sprint 3 no backlog do Jira, com 23 pontos estimados](../gestao/prints/02-sprint3.png)
+![Sprint 3 no backlog do Jira, com 24 pontos estimados](../gestao/prints/02-sprint3.png)
 
 <!-- fonte: Captura de tela do Jira Software feita pelos autores (2026). -->
 ![História US05 expandida, com suas subtarefas e os responsáveis de cada uma](../gestao/prints/03-historia-subtarefas.png)

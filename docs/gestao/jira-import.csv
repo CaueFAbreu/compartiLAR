@@ -4,7 +4,7 @@
 
 Critérios de aceitação:
 - Apenas e-mails do domínio ufu.br são aceitos para contas de estudante.
-- O cadastro exige nome, e-mail, senha, curso e telefone.
+- O cadastro exige nome, e-mail, senha, curso, período e telefone.
 - A senha tem no mínimo 8 caracteres, com letras e números.
 - O sistema envia um código de confirmação para o e-mail informado, e a conta só é ativada após a confirmação.
 - Não é possível cadastrar duas contas com o mesmo e-mail.",High,5,sprint-1,
@@ -14,7 +14,7 @@ Critérios de aceitação:
 - O cadastro exige nome, e-mail, senha, telefone e CPF.
 - O e-mail é confirmado por código, como na conta de estudante.
 - A conta fica com o status ""aguardando verificação"" até que um moderador a aprove.
-- O proprietário pode cadastrar moradias antes da aprovação, mas elas só ficam visíveis na busca depois dela.",Medium,3,sprint-2,
+- O proprietário pode cadastrar moradias antes da aprovação, mas elas só ficam visíveis na busca depois dela.",Medium,3,sprint-3,
 4,1,Story,US03 - Autenticar-se no sistema,"Como usuário cadastrado, quero entrar e sair do sistema com meu e-mail e senha, para acessar as funcionalidades restritas com segurança.
 
 Critérios de aceitação:
@@ -25,8 +25,10 @@ Critérios de aceitação:
 5,1,Story,US04 - Gerenciar perfil e perfil de convivência,"Como estudante, quero editar meus dados e informar meus hábitos de convivência, para que anunciantes e futuros colegas de casa saibam como eu vivo.
 
 Critérios de aceitação:
-- O estudante pode alterar nome, foto, curso, telefone e uma breve apresentação.
+- O estudante pode alterar nome, foto, curso, período, telefone e uma breve apresentação.
 - O perfil de convivência registra: horário de sono (cedo, tarde ou variável), nível de organização e limpeza (1 a 5), frequência de festas e visitas (nunca, às vezes ou frequente), se fuma, se tem pets, se aceita pets e a importância de silêncio para estudar (1 a 5).
+- O perfil também registra se aceita visitas que dormem na casa, onde costuma estudar (em casa, na biblioteca ou ambos), como prefere dividir as tarefas domésticas (escala, cada um cuida do seu ou diarista) e por quanto tempo pretende ficar (um semestre, um ano ou o curso todo). *(validação)*
+- A tela informa que as respostas não são exibidas a outros usuários, apenas o resultado da compatibilidade. *(validação)*
 - O e-mail não pode ser alterado.
 - O perfil de convivência é opcional, mas sem ele a compatibilidade (US12) não é calculada.",High,3,sprint-2,
 6,,Epic,Anúncios,,,,,
@@ -34,9 +36,12 @@ Critérios de aceitação:
 
 Critérios de aceitação:
 - A moradia tem tipo (república, apartamento, casa, kitnet ou quarto), título, descrição, endereço completo, público (masculino, feminino ou misto), comodidades (internet, garagem, lavanderia, mobiliada etc.) e regras (aceita pets, permite fumar, permite visitas).
+- O anúncio informa o número de moradores atuais, a forma de divisão das despesas e os itens de mobília incluídos. *(validação)*
+- O anunciante indica se oferece vagas em moradia compartilhada ou o imóvel inteiro; no imóvel inteiro, a moradia tem uma única vaga, que corresponde ao imóvel todo. *(validação)*
 - O sistema localiza o endereço no mapa e calcula a distância até cada campus de Uberlândia.
-- A moradia tem de 1 a 10 fotos.
-- A moradia tem ao menos uma vaga, com tipo de quarto (individual ou compartilhado), valor do aluguel, estimativa de contas (água, luz, internet) e data de disponibilidade.",High,8,sprint-1,
+- A moradia tem de 1 a 10 fotos, cada uma com a legenda do cômodo (quarto, banheiro, cozinha, área de serviço etc.). *(validação)*
+- A moradia tem ao menos uma vaga, com tipo de quarto (individual ou compartilhado), valor do aluguel, estimativa de contas (água, luz, internet), valor do condomínio quando houver e data de disponibilidade.
+- O cadastro em etapas mostra o progresso (ex.: ""Etapa 2 de 5""). *(validação)*",High,8,sprint-1,
 8,6,Story,US06 - Gerenciar minhas moradias e vagas,"Como anunciante, quero editar, pausar ou remover minhas moradias, atualizar as vagas e informar os moradores atuais, para manter o anúncio fiel à realidade.
 
 Critérios de aceitação:
@@ -49,7 +54,8 @@ Critérios de aceitação:
 
 Critérios de aceitação:
 - Apenas moradias ativas com vagas disponíveis aparecem nos resultados.
-- O valor considerado no filtro é o aluguel mais a estimativa de contas.
+- O valor exibido e o filtro de valor seguem a regra RN01 (aluguel, contas e condomínio).
+- Cada resultado destaca se é imóvel inteiro ou vaga em moradia compartilhada e mostra a distância e o tempo estimado a pé até o campus escolhido (RN02). *(validação)*
 - Os filtros podem ser combinados.
 - Os resultados podem ser ordenados por menor valor, menor distância até o campus escolhido ou mais recentes.
 - Os resultados são paginados.",High,5,sprint-1,
@@ -58,12 +64,13 @@ Critérios de aceitação:
 Critérios de aceitação:
 - O mapa mostra os campi de Uberlândia e as moradias encontradas.
 - Antes do aceite de um interesse, o mapa mostra apenas a região aproximada da moradia (raio de cerca de 300 metros), sem o endereço exato.
-- Cada moradia exibe a distância até o campus escolhido.
-- Os filtros da busca valem também para o mapa.",High,5,sprint-2,
+- Cada moradia exibe o valor (RN01) e a distância e o tempo a pé até o campus escolhido (RN02).
+- O painel de filtros (incluindo a faixa de valor) fica visível também no mapa. *(validação)*",High,5,sprint-2,
 12,9,Story,US09 - Visualizar detalhes da moradia,"Como visitante ou estudante, quero ver todos os detalhes de uma moradia, para decidir se vale a pena demonstrar interesse.
 
 Critérios de aceitação:
 - A página mostra fotos, descrição, tipo, bairro, região no mapa, distância até os campi, público, comodidades, regras, vagas com valores e datas, nota média das avaliações e dados públicos do anunciante.
+- A página mostra também o número de moradores, a lista deles (nome, curso e período), a divisão das despesas, o condomínio e a mobília incluída. *(validação)*
 - Moradias de proprietários exibem o selo ""proprietário verificado"".
 - Moradias removidas ou ocultas pela moderação não ficam acessíveis.",High,3,sprint-1,
 13,,Epic,Contato,,,,,
@@ -73,11 +80,12 @@ Critérios de aceitação:
 - O estudante escolhe a vaga e escreve uma mensagem de apresentação.
 - O anunciante recebe uma notificação por e-mail.
 - O estudante não pode demonstrar interesse em uma vaga da própria moradia nem ter dois interesses ativos na mesma vaga.
-- O estudante acompanha o status dos seus interesses (pendente, aceito, recusado ou cancelado).",High,3,sprint-2,
+- O estudante acompanha o status dos seus interesses (pendente, aceito, recusado ou cancelado).
+- Antes do envio, o sistema explica que a mensagem vai para o anunciante e que o interesse fica pendente até a resposta. *(validação)*",High,3,sprint-2,
 15,13,Story,US11 - Responder interesses e agendar visitas,"Como anunciante, quero aceitar ou recusar os interesses recebidos e combinar uma visita, para conhecer os candidatos à vaga.
 
 Critérios de aceitação:
-- O anunciante vê os interessados em cada vaga, com a apresentação, o perfil e a compatibilidade de cada um.
+- O anunciante vê os interessados em cada vaga, com a apresentação, o curso, o período, o selo de estudante verificado e a compatibilidade de cada um. *(validação)*
 - Ao aceitar um interesse, o sistema libera ao estudante o endereço exato e o telefone do anunciante, e ao anunciante o telefone do estudante.
 - O anunciante pode propor uma data e um horário de visita, que o estudante confirma ou recusa.
 - O estudante é notificado por e-mail de cada resposta.",High,5,sprint-2,
@@ -85,7 +93,7 @@ Critérios de aceitação:
 17,16,Story,US12 - Ver compatibilidade de convivência,"Como estudante, quero ver o meu grau de compatibilidade com os moradores atuais de uma moradia, para escolher um lugar onde a convivência tenha mais chance de dar certo.
 
 Critérios de aceitação:
-- A compatibilidade é um percentual de 0 a 100%, calculado a partir dos perfis de convivência do estudante e dos moradores vinculados.
+- A compatibilidade é um percentual de 0 a 100%, calculado pela regra RN03 a partir dos perfis de convivência do estudante e dos moradores vinculados.
 - O sistema mostra os pontos em comum e os pontos de atenção (ex.: ""horários de sono diferentes"").
 - A compatibilidade não é exibida se o estudante ou nenhum dos moradores tiver o perfil de convivência preenchido.
 - Os hábitos individuais dos moradores não são exibidos, apenas o resultado da comparação.",Medium,5,sprint-3,
@@ -93,19 +101,21 @@ Critérios de aceitação:
 
 Critérios de aceitação:
 - O anúncio de procura tem orçamento máximo, campus de referência, tipo de moradia desejada, data prevista de mudança e uma descrição.
-- O estudante vê as procuras ativas de outros estudantes, ordenadas pela compatibilidade de convivência.
+- O estudante vê as procuras ativas de outros estudantes, ordenadas pela compatibilidade de convivência (RN03).
 - O estudante pode enviar um convite com mensagem a outro estudante; o contato de ambos é liberado quando o convite é aceito.
-- O estudante pode encerrar a própria procura a qualquer momento.",Medium,5,sprint-3,
+- O estudante pode encerrar a própria procura a qualquer momento.
+- Cada procura exibe o selo ""estudante verificado (e-mail UFU)"", e o mural pode ser filtrado por compatibilidade mínima. *(validação)*",Medium,5,sprint-3,
 19,16,Story,US14 - Favoritar moradias,"Como estudante, quero salvar moradias como favoritas, para compará-las e voltar a elas depois.
 
 Critérios de aceitação:
 - O estudante pode adicionar e remover favoritos.
-- A lista de favoritos indica as moradias que não têm mais vagas disponíveis.",Low,2,sprint-3,
+- A lista de favoritos indica as moradias que não têm mais vagas disponíveis.
+- O estudante pode comparar até 3 favoritas lado a lado: valor, distância e tempo a pé, tipo de oferta, comodidades e compatibilidade (RN01 a RN03). *(validação)*",Low,2,sprint-2,
 20,,Epic,Confiança e moderação,,,,,
 21,20,Story,US15 - Avaliar moradia,"Como estudante que morou ou visitou uma moradia, quero avaliá-la, para ajudar outros estudantes a escolher bem.
 
 Critérios de aceitação:
-- Só pode avaliar quem teve um interesse aceito na moradia ou foi vinculado como morador.
+- Só pode avaliar quem fez uma visita à moradia (visita confirmada cuja data já passou) ou é ou foi morador confirmado dela.
 - A avaliação tem notas de 1 a 5 para custo-benefício, localização, conservação e convivência, além de um comentário.
 - Cada estudante avalia uma mesma moradia apenas uma vez, mas pode editar a avaliação.
 - O anunciante pode publicar uma resposta a cada avaliação.",Medium,3,sprint-3,
@@ -145,26 +155,26 @@ Critérios de aceitação:
 44,12,Sub-task,T21 - Implementar o endpoint de detalhes da moradia,,,,sprint-1,resp-caue
 45,12,Sub-task,T22 - Criar a página de detalhes da moradia,,,,sprint-1,resp-joao
 46,,Task,T23 - Publicar a primeira versão online (frontend e backend),Categoria: Infra,,,sprint-1,resp-caue
-47,3,Sub-task,"T24 - Implementar o cadastro de proprietário com status ""aguardando verificação""",,,,sprint-2,resp-caue
-48,3,Sub-task,T25 - Criar a opção de cadastro como proprietário na tela de cadastro,,,,sprint-2,resp-joao
-49,5,Sub-task,T26 - Implementar os endpoints de perfil e de perfil de convivência,,,,sprint-2,resp-joao
-50,5,Sub-task,"T27 - Criar a tela ""Meu perfil"" com o questionário de convivência",,,,sprint-2,resp-joao
-51,8,Sub-task,"T28 - Implementar edição, pausa e remoção de moradias, gestão de vagas e vínculo de moradores",,,,sprint-2,resp-caue
-52,8,Sub-task,"T29 - Criar a tela ""Minhas moradias""",,,,sprint-2,resp-joao
-53,11,Sub-task,T30 - Implementar o endpoint do mapa com localização aproximada (deslocamento aleatório fixo),,,,sprint-2,resp-caue
-54,11,Sub-task,T31 - Criar a visualização em mapa com os campi e as moradias,,,,sprint-2,resp-joao
-55,14,Sub-task,T32 - Implementar o registro de interesse e a notificação por e-mail ao anunciante,,,,sprint-2,resp-caue
-56,14,Sub-task,"T33 - Criar o formulário ""Tenho interesse"" e a tela ""Meus interesses""",,,,sprint-2,resp-joao
-57,15,Sub-task,"T34 - Implementar aceite e recusa de interesses, liberação de contato e agendamento de visita",,,,sprint-2,resp-caue
-58,15,Sub-task,T35 - Escrever os testes unitários do fluxo de interesse e visita,,,,sprint-2,resp-caue
-59,15,Sub-task,T36 - Criar a tela de interessados por vaga e o agendamento de visita,,,,sprint-2,resp-joao
+47,5,Sub-task,T26 - Implementar os endpoints de perfil e de perfil de convivência,,,,sprint-2,resp-joao
+48,5,Sub-task,"T27 - Criar a tela ""Meu perfil"" com o questionário de convivência",,,,sprint-2,resp-joao
+49,8,Sub-task,"T28 - Implementar edição, pausa e remoção de moradias, gestão de vagas e vínculo de moradores",,,,sprint-2,resp-caue
+50,8,Sub-task,"T29 - Criar a tela ""Minhas moradias""",,,,sprint-2,resp-joao
+51,11,Sub-task,T30 - Implementar o endpoint do mapa com localização aproximada (deslocamento aleatório fixo),,,,sprint-2,resp-caue
+52,11,Sub-task,T31 - Criar a visualização em mapa com os campi e as moradias,,,,sprint-2,resp-joao
+53,14,Sub-task,T32 - Implementar o registro de interesse e a notificação por e-mail ao anunciante,,,,sprint-2,resp-caue
+54,14,Sub-task,"T33 - Criar o formulário ""Tenho interesse"" e a tela ""Meus interesses""",,,,sprint-2,resp-joao
+55,15,Sub-task,"T34 - Implementar aceite e recusa de interesses, liberação de contato e agendamento de visita",,,,sprint-2,resp-caue
+56,15,Sub-task,T35 - Escrever os testes unitários do fluxo de interesse e visita,,,,sprint-2,resp-caue
+57,15,Sub-task,T36 - Criar a tela de interessados por vaga e o agendamento de visita,,,,sprint-2,resp-joao
+58,19,Sub-task,"T42 - Implementar os endpoints de adicionar, remover e listar favoritos",,,,sprint-2,resp-joao
+59,19,Sub-task,"T43 - Criar o botão de favoritar, a tela ""Favoritos"" e a comparação lado a lado",,,,sprint-2,resp-joao
 60,,Task,T37 - Aplicar teste de uso com 5 colegas e registrar o feedback no Jira,Categoria: Validação,,,sprint-2,resp-joao
-61,17,Sub-task,"T38 - Implementar o algoritmo de compatibilidade de convivência, com testes unitários",,,,sprint-3,resp-caue
-62,17,Sub-task,"T39 - Exibir a compatibilidade, os pontos em comum e os pontos de atenção na página da moradia",,,,sprint-3,resp-joao
-63,18,Sub-task,T40 - Implementar os endpoints de procura de colegas e de convites,,,,sprint-3,resp-caue
-64,18,Sub-task,"T41 - Criar o mural ""Procuro colega"" e o formulário de convite",,,,sprint-3,resp-joao
-65,19,Sub-task,"T42 - Implementar os endpoints de adicionar, remover e listar favoritos",,,,sprint-3,resp-joao
-66,19,Sub-task,"T43 - Criar o botão de favoritar e a tela ""Favoritos""",,,,sprint-3,resp-joao
+61,3,Sub-task,"T24 - Implementar o cadastro de proprietário com status ""aguardando verificação""",,,,sprint-3,resp-caue
+62,3,Sub-task,T25 - Criar a opção de cadastro como proprietário na tela de cadastro,,,,sprint-3,resp-joao
+63,17,Sub-task,"T38 - Implementar o algoritmo de compatibilidade de convivência, com testes unitários",,,,sprint-3,resp-caue
+64,17,Sub-task,"T39 - Exibir a compatibilidade, os pontos em comum e os pontos de atenção na página da moradia",,,,sprint-3,resp-joao
+65,18,Sub-task,T40 - Implementar os endpoints de procura de colegas e de convites,,,,sprint-3,resp-caue
+66,18,Sub-task,"T41 - Criar o mural ""Procuro colega"" e o formulário de convite",,,,sprint-3,resp-joao
 67,21,Sub-task,T44 - Implementar avaliações com a regra de elegibilidade e a resposta do anunciante,,,,sprint-3,resp-caue
 68,21,Sub-task,T45 - Criar o formulário de avaliação e a lista de avaliações,,,,sprint-3,resp-joao
 69,22,Sub-task,T46 - Implementar o registro de denúncias e a ocultação automática com 3 denúncias,,,,sprint-3,resp-caue

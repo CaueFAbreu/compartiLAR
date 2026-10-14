@@ -23,7 +23,7 @@ Cada caso de uso detalha uma história de usuário do backlog (UC01 corresponde 
 
 ![Diagrama de casos de uso](../diagramas/casos-de-uso.png)
 
-Fonte do diagrama: [casos-de-uso.puml](../diagramas/casos-de-uso.puml).
+Fonte do diagrama: [casos-de-uso.svg](../diagramas/casos-de-uso.svg), gerado a partir do modelo em [casos-de-uso.puml](../diagramas/casos-de-uso.puml).
 
 **Relacionamentos representados:**
 
@@ -49,7 +49,7 @@ Fonte do diagrama: [casos-de-uso.puml](../diagramas/casos-de-uso.puml).
 **Generalização:** especializa o caso de uso abstrato "Cadastrar conta".
 
 **Fluxo normal:**
-1. O visitante informa nome, e-mail institucional, senha, curso e telefone.
+1. O visitante informa nome, e-mail institucional, senha, curso, período e telefone.
 2. O sistema valida os dados informados.
 3. O sistema registra a conta como pendente de confirmação.
 4. O sistema envia um código de confirmação para o e-mail informado.
@@ -131,7 +131,7 @@ Fonte do diagrama: [casos-de-uso.puml](../diagramas/casos-de-uso.puml).
 1. Incluir <ins>Autenticar usuário (UC03)</ins>.
 2. O estudante solicita a edição do perfil.
 3. O sistema apresenta os dados pessoais e o perfil de convivência atuais.
-4. O estudante altera nome, foto, curso, telefone ou apresentação.
+4. O estudante altera nome, foto, curso, período, telefone ou apresentação.
 5. O estudante informa os hábitos de convivência: horário de sono, organização e limpeza, frequência de festas e visitas, visitas que dormem, se fuma, se tem pets, se aceita pets, onde estuda, importância de silêncio, divisão de tarefas e tempo de permanência.
 6. O sistema valida os dados.
 7. O sistema salva as alterações.
@@ -155,7 +155,7 @@ Fonte do diagrama: [casos-de-uso.puml](../diagramas/casos-de-uso.puml).
 
 **Fluxo normal:**
 1. Incluir <ins>Autenticar usuário (UC03)</ins>.
-2. O anunciante informa tipo, título, descrição, público, comodidades, regras, número de moradores, divisão das despesas e mobília incluída.
+2. O anunciante informa tipo, modalidade (vagas em moradia compartilhada ou imóvel inteiro), título, descrição, público, comodidades, regras, número de moradores, divisão das despesas e mobília incluída.
 3. O anunciante informa o endereço completo.
 4. O sistema obtém as coordenadas do endereço junto ao Serviço de Mapas.
 5. O sistema calcula a distância da moradia até cada campus.
@@ -211,7 +211,7 @@ Fonte do diagrama: [casos-de-uso.puml](../diagramas/casos-de-uso.puml).
 1. O ator escolhe o campus de referência.
 2. O ator seleciona os filtros: tipo de moradia, faixa de valor, distância máxima, público, tipo de quarto e comodidades.
 3. O ator escolhe a ordenação: menor valor, menor distância ou mais recentes.
-4. O sistema apresenta a primeira página de moradias ativas com vagas que atendem aos critérios, com foto, indicação de imóvel inteiro ou vaga compartilhada, bairro, valor total, distância e tempo a pé até o campus.
+4. O sistema apresenta a primeira página de moradias ativas com vagas que atendem aos critérios, com foto, indicação de imóvel inteiro ou vaga compartilhada, bairro, valor (RN01), distância e tempo a pé até o campus (RN02).
 
 **Extensões:**
 - 1a. O ator não escolhe um campus: o sistema ordena e filtra sem considerar a distância.
@@ -338,7 +338,7 @@ Fonte do diagrama: [casos-de-uso.puml](../diagramas/casos-de-uso.puml).
 1. Incluir <ins>Autenticar usuário (UC03)</ins>.
 2. O estudante solicita a compatibilidade com os moradores.
 3. O sistema compara o perfil de convivência do estudante com o de cada morador vinculado.
-4. O sistema calcula o percentual médio de compatibilidade.
+4. O sistema calcula o percentual médio de compatibilidade, conforme a regra RN03.
 5. O sistema apresenta o percentual, os pontos em comum e os pontos de atenção, sem revelar os hábitos individuais dos moradores.
 
 **Extensões:**
@@ -392,6 +392,8 @@ Fonte do diagrama: [casos-de-uso.puml](../diagramas/casos-de-uso.puml).
 **Extensões:**
 - 2a. A moradia já está entre os favoritos: o sistema remove o favorito.
 - *a. O estudante solicita a lista de favoritos: o sistema apresenta as moradias favoritas, indicando as que não têm mais vagas.
+- *b. O estudante seleciona até 3 favoritas e solicita a comparação: o sistema apresenta lado a lado o valor, a distância e o tempo a pé até o campus, o tipo de oferta, as comodidades e a compatibilidade de cada uma.
+- *c. O estudante seleciona mais de 3 favoritas para comparar: o sistema informa o limite e mantém as 3 primeiras selecionadas.
 
 **Pós-condição:** a lista de favoritos do estudante está atualizada.
 **Casos de uso relacionados:** UC03, UC09.
@@ -406,7 +408,7 @@ Fonte do diagrama: [casos-de-uso.puml](../diagramas/casos-de-uso.puml).
 
 **Fluxo normal:**
 1. Incluir <ins>Autenticar usuário (UC03)</ins>.
-2. O sistema verifica que o estudante teve um interesse aceito ou foi morador da moradia.
+2. O sistema verifica que o estudante fez uma visita à moradia (visita confirmada cuja data já passou) ou é ou foi morador confirmado dela.
 3. O estudante atribui notas de 1 a 5 para custo-benefício, localização, conservação e convivência.
 4. O estudante escreve um comentário.
 5. O sistema registra a avaliação e recalcula a nota média da moradia.

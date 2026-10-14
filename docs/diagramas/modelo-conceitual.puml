@@ -30,6 +30,7 @@ entity "ESTUDANTE" as Estudante {
   * usuario_id : FK
   --
   * curso_id : FK
+  * periodo : inteiro
   apresentacao : texto
 }
 
@@ -88,6 +89,7 @@ entity "MORADIA" as Moradia {
   --
   * anunciante_id : FK
   * tipo : {REPUBLICA, APARTAMENTO, CASA, KITNET, QUARTO}
+  * modalidade : {VAGAS, IMOVEL_INTEIRO}
   * titulo : texto
   * descricao : texto
   * logradouro, numero, bairro, cep : texto

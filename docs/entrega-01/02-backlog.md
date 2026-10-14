@@ -5,7 +5,7 @@ As histórias de usuário estão agrupadas em épicos e seguem o formato *"Como 
 - **Prioridade (MoSCoW):** **M** = Must have (essencial), **S** = Should have (importante), **C** = Could have (desejável).
 - **Pontos:** estimativa relativa de esforço na escala de Fibonacci (1, 2, 3, 5, 8, 13).
 - **Sprint:** em que sprint a história está planejada (ver seção 3).
-- **(validação):** critério incluído após a validação do protótipo com 5 estudantes (seção 6.4).
+- **(validação):** critério incluído após a validação do protótipo com 5 participantes (seção 6.4).
 
 ## Resumo
 
@@ -13,7 +13,7 @@ As histórias de usuário estão agrupadas em épicos e seguem o formato *"Como 
 | ID | História | Épico | Prior. | Pontos | Sprint |
 |---|---|---|---|---|---|
 | US01 | Cadastrar conta de estudante | Contas e perfis | M | 5 | 1 |
-| US02 | Cadastrar conta de proprietário | Contas e perfis | S | 3 | 2 |
+| US02 | Cadastrar conta de proprietário | Contas e perfis | S | 3 | 3 |
 | US03 | Autenticar-se no sistema | Contas e perfis | M | 3 | 1 |
 | US04 | Gerenciar perfil e perfil de convivência | Contas e perfis | M | 3 | 2 |
 | US05 | Anunciar moradia com vagas | Anúncios | M | 8 | 1 |
@@ -25,7 +25,7 @@ As histórias de usuário estão agrupadas em épicos e seguem o formato *"Como 
 | US11 | Responder interesses e agendar visitas | Contato | M | 5 | 2 |
 | US12 | Ver compatibilidade de convivência | Convivência | S | 5 | 3 |
 | US13 | Procurar colegas para dividir moradia | Convivência | S | 5 | 3 |
-| US14 | Favoritar moradias | Convivência | C | 2 | 3 |
+| US14 | Favoritar moradias | Convivência | C | 2 | 2 |
 | US15 | Avaliar moradia | Confiança e moderação | S | 3 | 3 |
 | US16 | Denunciar anúncio | Confiança e moderação | M | 3 | 3 |
 | US17 | Moderar denúncias e verificar proprietários | Confiança e moderação | M | 5 | 3 |
@@ -40,7 +40,7 @@ As histórias de usuário estão agrupadas em épicos e seguem o formato *"Como 
 
 **Critérios de aceitação:**
 - Apenas e-mails do domínio `ufu.br` são aceitos para contas de estudante.
-- O cadastro exige nome, e-mail, senha, curso e telefone.
+- O cadastro exige nome, e-mail, senha, curso, período e telefone.
 - A senha tem no mínimo 8 caracteres, com letras e números.
 - O sistema envia um código de confirmação para o e-mail informado, e a conta só é ativada após a confirmação.
 - Não é possível cadastrar duas contas com o mesmo e-mail.
@@ -67,7 +67,7 @@ As histórias de usuário estão agrupadas em épicos e seguem o formato *"Como 
 **Como** estudante, **quero** editar meus dados e informar meus hábitos de convivência, **para** que anunciantes e futuros colegas de casa saibam como eu vivo.
 
 **Critérios de aceitação:**
-- O estudante pode alterar nome, foto, curso, telefone e uma breve apresentação.
+- O estudante pode alterar nome, foto, curso, período, telefone e uma breve apresentação.
 - O perfil de convivência registra: horário de sono (cedo, tarde ou variável), nível de organização e limpeza (1 a 5), frequência de festas e visitas (nunca, às vezes ou frequente), se fuma, se tem pets, se aceita pets e a importância de silêncio para estudar (1 a 5).
 - O perfil também registra se aceita visitas que dormem na casa, onde costuma estudar (em casa, na biblioteca ou ambos), como prefere dividir as tarefas domésticas (escala, cada um cuida do seu ou diarista) e por quanto tempo pretende ficar (um semestre, um ano ou o curso todo). *(validação)*
 - A tela informa que as respostas não são exibidas a outros usuários, apenas o resultado da compatibilidade. *(validação)*
@@ -82,6 +82,7 @@ As histórias de usuário estão agrupadas em épicos e seguem o formato *"Como 
 **Critérios de aceitação:**
 - A moradia tem tipo (república, apartamento, casa, kitnet ou quarto), título, descrição, endereço completo, público (masculino, feminino ou misto), comodidades (internet, garagem, lavanderia, mobiliada etc.) e regras (aceita pets, permite fumar, permite visitas).
 - O anúncio informa o número de moradores atuais, a forma de divisão das despesas e os itens de mobília incluídos. *(validação)*
+- O anunciante indica se oferece **vagas em moradia compartilhada** ou o **imóvel inteiro**; no imóvel inteiro, a moradia tem uma única vaga, que corresponde ao imóvel todo. *(validação)*
 - O sistema localiza o endereço no mapa e calcula a distância até cada campus de Uberlândia.
 - A moradia tem de 1 a 10 fotos, cada uma com a legenda do cômodo (quarto, banheiro, cozinha, área de serviço etc.). *(validação)*
 - A moradia tem ao menos uma vaga, com tipo de quarto (individual ou compartilhado), valor do aluguel, estimativa de contas (água, luz, internet), valor do condomínio quando houver e data de disponibilidade.
@@ -103,8 +104,8 @@ As histórias de usuário estão agrupadas em épicos e seguem o formato *"Como 
 
 **Critérios de aceitação:**
 - Apenas moradias ativas com vagas disponíveis aparecem nos resultados.
-- O valor considerado no filtro é o aluguel mais a estimativa de contas e o condomínio.
-- Cada resultado destaca se é **imóvel inteiro** ou **vaga em moradia compartilhada** e mostra a distância e o tempo estimado a pé até o campus escolhido. *(validação)*
+- O valor exibido e o filtro de valor seguem a regra RN01 (aluguel, contas e condomínio).
+- Cada resultado destaca se é **imóvel inteiro** ou **vaga em moradia compartilhada** e mostra a distância e o tempo estimado a pé até o campus escolhido (RN02). *(validação)*
 - Os filtros podem ser combinados.
 - Os resultados podem ser ordenados por menor valor, menor distância até o campus escolhido ou mais recentes.
 - Os resultados são paginados.
@@ -115,7 +116,7 @@ As histórias de usuário estão agrupadas em épicos e seguem o formato *"Como 
 **Critérios de aceitação:**
 - O mapa mostra os campi de Uberlândia e as moradias encontradas.
 - Antes do aceite de um interesse, o mapa mostra apenas a região aproximada da moradia (raio de cerca de 300 metros), sem o endereço exato.
-- Cada moradia exibe a distância até o campus escolhido.
+- Cada moradia exibe o valor (RN01) e a distância e o tempo a pé até o campus escolhido (RN02).
 - O painel de filtros (incluindo a faixa de valor) fica visível também no mapa. *(validação)*
 
 ### US09: Visualizar detalhes da moradia
@@ -154,7 +155,7 @@ As histórias de usuário estão agrupadas em épicos e seguem o formato *"Como 
 **Como** estudante, **quero** ver o meu grau de compatibilidade com os moradores atuais de uma moradia, **para** escolher um lugar onde a convivência tenha mais chance de dar certo.
 
 **Critérios de aceitação:**
-- A compatibilidade é um percentual de 0 a 100%, calculado a partir dos perfis de convivência do estudante e dos moradores vinculados.
+- A compatibilidade é um percentual de 0 a 100%, calculado pela regra RN03 a partir dos perfis de convivência do estudante e dos moradores vinculados.
 - O sistema mostra os pontos em comum e os pontos de atenção (ex.: "horários de sono diferentes").
 - A compatibilidade não é exibida se o estudante ou nenhum dos moradores tiver o perfil de convivência preenchido.
 - Os hábitos individuais dos moradores não são exibidos, apenas o resultado da comparação.
@@ -164,7 +165,7 @@ As histórias de usuário estão agrupadas em épicos e seguem o formato *"Como 
 
 **Critérios de aceitação:**
 - O anúncio de procura tem orçamento máximo, campus de referência, tipo de moradia desejada, data prevista de mudança e uma descrição.
-- O estudante vê as procuras ativas de outros estudantes, ordenadas pela compatibilidade de convivência.
+- O estudante vê as procuras ativas de outros estudantes, ordenadas pela compatibilidade de convivência (RN03).
 - O estudante pode enviar um convite com mensagem a outro estudante; o contato de ambos é liberado quando o convite é aceito.
 - O estudante pode encerrar a própria procura a qualquer momento.
 - Cada procura exibe o selo "estudante verificado (e-mail UFU)", e o mural pode ser filtrado por compatibilidade mínima. *(validação)*
@@ -175,7 +176,7 @@ As histórias de usuário estão agrupadas em épicos e seguem o formato *"Como 
 **Critérios de aceitação:**
 - O estudante pode adicionar e remover favoritos.
 - A lista de favoritos indica as moradias que não têm mais vagas disponíveis.
-- O estudante pode comparar até 3 favoritas lado a lado (valor total, distância, tipo, comodidades e compatibilidade). *(validação)*
+- O estudante pode comparar até 3 favoritas lado a lado: valor, distância e tempo a pé, tipo de oferta, comodidades e compatibilidade (RN01 a RN03). *(validação)*
 
 ## Épico 6: Confiança e moderação
 
@@ -183,7 +184,7 @@ As histórias de usuário estão agrupadas em épicos e seguem o formato *"Como 
 **Como** estudante que morou ou visitou uma moradia, **quero** avaliá-la, **para** ajudar outros estudantes a escolher bem.
 
 **Critérios de aceitação:**
-- Só pode avaliar quem teve um interesse aceito na moradia ou foi vinculado como morador.
+- Só pode avaliar quem fez uma visita à moradia (visita confirmada cuja data já passou) ou é ou foi morador confirmado dela.
 - A avaliação tem notas de 1 a 5 para custo-benefício, localização, conservação e convivência, além de um comentário.
 - Cada estudante avalia uma mesma moradia apenas uma vez, mas pode editar a avaliação.
 - O anunciante pode publicar uma resposta a cada avaliação.
@@ -204,6 +205,42 @@ As histórias de usuário estão agrupadas em épicos e seguem o formato *"Como 
 - Na denúncia, o moderador pode julgá-la procedente (a moradia é removida) ou improcedente (a moradia volta a ficar visível), e pode suspender o anunciante.
 - No cadastro de proprietário, o moderador pode aprovar ou recusar, informando o motivo.
 - O usuário afetado é notificado por e-mail de cada decisão.
+
+## Regras de negócio
+
+As regras abaixo definem os valores calculados que aparecem nas histórias e no protótipo.
+
+**RN01 – Valor exibido de uma moradia**
+
+- O valor total mensal de uma vaga é a soma do aluguel, da estimativa de contas e do condomínio.
+- Nos resultados da busca, no mapa e nos favoritos, a moradia exibe o menor valor total entre as suas vagas disponíveis. Quando as vagas disponíveis têm valores diferentes, o valor aparece com o prefixo "a partir de".
+- O filtro de faixa de valor inclui a moradia quando ao menos uma vaga disponível está dentro da faixa.
+
+**RN02 – Distância e tempo a pé até o campus**
+
+- A distância é o comprimento da rota a pé entre a moradia e cada campus, obtido do Serviço de Mapas quando o endereço é cadastrado ou alterado.
+- O tempo a pé é a distância dividida por 80 metros por minuto (cerca de 4,8 km/h), arredondado para o minuto mais próximo. Exemplo: 1.200 m resultam em 15 minutos.
+
+**RN03 – Compatibilidade de convivência**
+
+- A compatibilidade entre dois estudantes compara cada item do perfil de convivência, com uma nota de 0 a 1 e o peso indicado no quadro a seguir.
+- O percentual do par é a soma das notas multiplicadas pelos pesos, dividida pela soma dos pesos (16) e multiplicada por 100.
+- A compatibilidade com uma moradia é a média dos percentuais do estudante com cada morador que tem perfil de convivência, arredondada para o inteiro mais próximo.
+- São pontos em comum os itens com nota 1 em todos os pares, e pontos de atenção os itens com nota 0 em algum par.
+
+<!-- quadro: Itens, notas e pesos da compatibilidade de convivência -->
+| Item do perfil | Peso | Nota do item |
+|---|---|---|
+| Horário de sono | 2 | 1 se iguais; 0,5 se um deles é "variável"; 0 para cedo × tarde |
+| Festas e visitas | 2 | 1 se iguais; 0,5 se vizinhos na escala (nunca, às vezes, frequente); 0 para nunca × frequente |
+| Organização e limpeza (1 a 5) | 2 | 1 − (diferença ÷ 4) |
+| Silêncio para estudar (1 a 5) | 2 | 1 − (diferença ÷ 4) |
+| Fumo | 2 | 1 se os dois fumam ou os dois não fumam; 0 caso contrário |
+| Pets | 2 | 0 se um tem pet e o outro não aceita pet; 1 caso contrário |
+| Visitas que dormem na casa | 1 | 1 se iguais; 0 se diferentes |
+| Local de estudo | 1 | 1 se iguais; 0,5 se diferentes |
+| Divisão de tarefas | 1 | 1 se iguais; 0,5 se diferentes |
+| Tempo de permanência | 1 | 1 se iguais; 0,5 se vizinhos (semestre, ano, curso todo); 0 para semestre × curso todo |
 
 ---
 

@@ -43,8 +43,8 @@ Cada item tem as etiquetas (labels) `sprint-1`, `sprint-2` ou `sprint-3`. As tar
 | Sprint | Início | Fim | Meta |
 |---|---|---|---|
 | Sprint 1 | 19/10/2026 | 08/11/2026 | O estudante consegue se cadastrar, anunciar uma moradia e encontrá-la na busca. |
-| Sprint 2 | 09/11/2026 | 29/11/2026 | O estudante vê as moradias no mapa e negocia a vaga com o anunciante até a visita. |
-| Sprint 3 | 30/11/2026 | 20/12/2026 | A plataforma recomenda pela convivência, é avaliada pelos usuários e é moderada. |
+| Sprint 2 | 09/11/2026 | 29/11/2026 | O estudante vê as moradias no mapa, negocia a vaga com o anunciante até a visita e compara as favoritas. |
+| Sprint 3 | 30/11/2026 | 20/12/2026 | A plataforma recebe proprietários verificados, recomenda pela convivência, é avaliada pelos usuários e é moderada. |
 
 2. Filtre o backlog pela etiqueta `sprint-1`, selecione todos os itens (Shift + clique) e mova-os para a Sprint 1. Repita para as sprints 2 e 3.
 
